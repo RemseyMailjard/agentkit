@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "runner": "codex-exec",
+  "purpose": "AgentKit plugin and skill routing evaluation",
+  "default_cases": "evals/cross-plugin/cases.json",
+  "model_env": "AGENTKIT_EVAL_MODEL",
+  "codex_binary_env": "CODEX_BIN",
+  "assertion_mode": "exact-set",
+  "notes": [
+    "The adapter asks Codex to route only; it must not execute the user's task.",
+    "No live benchmark is claimed unless codex exec actually runs.",
+    "OpenAI plugin-eval remains the preferred benchmark layer for full live plugin benchmarking."
+  ]
+}

@@ -1,0 +1,52 @@
+name: Codex Runtime Evals
+
+on:
+  workflow_dispatch:
+    inputs:
+      cases:
+        description: "Eval cases glob/path"
+        required: false
+        default: "evals/cross-plugin/cases.json"
+
+permissions:
+  contents: read
+
+jobs:
+  routing-evals:
+    name: Codex routing evals
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify Codex CLI
+        run: |
+          if ! command -v codex >/dev/null 2>&1; then
+            echo "Codex CLI is not installed on this runner."
+            echo "Install/authenticate Codex before enabling this workflow as a release gate."
+            exit 1
+          fi
+          codex --version
+
+      - name: Run Codex routing evals
+        env:
+          AGENTKIT_EVAL_MODEL: ${{ vars.AGENTKIT_EVAL_MODEL }}
+        run: |
+          python scripts/run_codex_evals.py             --cases "${{ inputs.cases }}"
+
+      - name: Add eval report
+        if: always()
+        run: |
+          echo "## AgentKit Codex Runtime Evals" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f evals/runtime/codex-results.md ]; then
+            cat evals/runtime/codex-results.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No Codex runtime report produced." >> "$GITHUB_STEP_SUMMARY"
+          fi
