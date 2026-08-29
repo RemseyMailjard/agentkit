@@ -30,5 +30,11 @@ jobs:
 
       - name: Summary
         run: |
-          echo "MCP Builder benchmark assets are present and structurally valid." >> "$GITHUB_STEP_SUMMARY"
-          echo "Live Codex benchmarking is currently optional and not part of CI." >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "## MCP Builder Benchmark Prep"
+            echo
+            echo "Benchmark assets are present and structurally valid."
+            echo
+            echo "Live Codex execution is intentionally optional and is not part of CI."
+            echo "No OPENAI_API_KEY or Codex authentication is required."
+          } >> "$GITHUB_STEP_SUMMARY"

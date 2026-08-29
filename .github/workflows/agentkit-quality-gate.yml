@@ -1,0 +1,102 @@
+name: AgentKit Quality Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gate:
+    name: AgentKit deterministic quality gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout AgentKit
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Checkout OpenAI plugins
+        uses: actions/checkout@v4
+        with:
+          repository: openai/plugins
+          path: .external/openai-plugins
+
+      - name: 1. Structural validation
+        run: |
+          python scripts/validate_agentkit.py
+
+      - name: 2. Runtime routing smoke tests
+        run: |
+          python scripts/run_runtime_evals.py \
+            --cases "evals/runtime/smoke-cases.json" \
+            --runner fixture \
+            --fixtures "evals/runtime/fixtures.json" \
+            --json-out "evals/runtime/quality-gate-results.json" \
+            --markdown-out "evals/runtime/quality-gate-results.md"
+
+      - name: 3. Official MCP Builder Plugin Eval
+        env:
+          OPENAI_PLUGINS_DIR: ${{ github.workspace }}/.external/openai-plugins
+        run: |
+          python scripts/run_plugin_eval_mcp_builder.py analyze --format markdown \
+            | tee mcp-builder-plugin-eval.md
+
+      - name: 4. Enforce MCP Builder Plugin Eval threshold
+        run: |
+          python scripts/check_plugin_eval_report.py \
+            mcp-builder-plugin-eval.md \
+            --minimum-score 80 \
+            --require-zero-fails
+
+      - name: 5. Benchmark asset validation
+        run: |
+          test -f plugins/mcp-builder/.plugin-eval/benchmark.template.json
+          test -f benchmarks/workspaces/mcp-builder-customer-support/openapi.yaml
+          test -f benchmarks/workspaces/mcp-builder-customer-support/starter_server.py
+          test -f scripts/run_mcp_builder_live_benchmark.py
+          python -m compileall -q benchmarks/workspaces/mcp-builder-customer-support
+
+      - name: Quality Gate summary
+        if: always()
+        run: |
+          {
+            echo "## AgentKit Quality Gate"
+            echo
+            echo "- Structural validator: executed"
+            echo "- Runtime fixture routing smoke: executed"
+            echo "- Official OpenAI Plugin Eval: executed"
+            echo "- MCP Builder minimum score: 80/100"
+            echo "- MCP Builder hard failures allowed: 0"
+            echo "- Benchmark assets: validated"
+            echo "- Live Codex benchmark: optional; not part of this gate"
+            echo
+            if [ -f mcp-builder-plugin-eval.md ]; then
+              echo "### MCP Builder Plugin Eval"
+              sed -n '/## At a Glance/,/## Why It Matters/p' mcp-builder-plugin-eval.md
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agentkit-quality-gate
+          path: |
+            mcp-builder-plugin-eval.md
+            evals/runtime/quality-gate-results.json
+            evals/runtime/quality-gate-results.md
+          if-no-files-found: warn
