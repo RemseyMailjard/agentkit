@@ -1,0 +1,45 @@
+[
+  {
+    "id": "create-server-from-api",
+    "prompt": "Build an MCP server around this customer API.",
+    "expected_skill": "create-mcp-server",
+    "quality_checks": [
+      "capability-first design",
+      "authentication considered",
+      "tests included",
+      "no fake production implementation"
+    ]
+  },
+  {
+    "id": "review-tool-sprawl",
+    "prompt": "This MCP server exposes 47 tools. Review the architecture before changing anything.",
+    "expected_skill": "review-mcp-server",
+    "quality_checks": [
+      "does not edit first",
+      "identifies tool granularity risk",
+      "uses severity classification"
+    ]
+  },
+  {
+    "id": "add-customer-note-tool",
+    "prompt": "Add a tool that lets agents append a note to an existing customer.",
+    "expected_skill": "create-mcp-tool",
+    "quality_checks": [
+      "clear side effect",
+      "minimal schema",
+      "authorization considered",
+      "tests added"
+    ]
+  },
+  {
+    "id": "openapi-to-mcp",
+    "prompt": "Analyze this OpenAPI specification and propose a clean MCP capability model.",
+    "expected_skill": "reverse-engineer-api",
+    "quality_checks": [
+      "endpoint inventory",
+      "business capability grouping",
+      "evidence separated from inference",
+      "tool/resource distinction"
+    ]
+  }
+]
