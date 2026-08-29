@@ -1,0 +1,78 @@
+{
+  "kind": "plugin-eval-benchmark",
+  "schemaVersion": 2,
+  "version": 2,
+  "targetKind": "plugin",
+  "targetName": "mcp-builder",
+  "runner": {
+    "type": "codex-cli",
+    "model": "gpt-5.4",
+    "sandbox": "workspace-write",
+    "approvalPolicy": "never",
+    "extraArgs": []
+  },
+  "workspace": {
+    "sourcePath": "__AGENTKIT_WORKSPACE__",
+    "setupMode": "copy",
+    "preserve": "on-failure"
+  },
+  "targetProvisioning": {
+    "mode": "local-copy"
+  },
+  "verifiers": {
+    "commands": [
+      "python -m compileall -q ."
+    ]
+  },
+  "notes": [
+    "Portable AgentKit template. scripts/run_mcp_builder_live_benchmark.py replaces __AGENTKIT_WORKSPACE__ with an absolute path before execution.",
+    "Scenarios intentionally cover build, review/security, and boundary behavior.",
+    "This benchmark performs real codex exec runs."
+  ],
+  "setupQuestions": [
+    "Can MCP Builder turn a small REST API into a capability-first MCP design and implementation?",
+    "Does MCP Builder keep review and remediation distinct unless fixes are requested?",
+    "Does MCP Builder identify security boundaries without inventing execution evidence?",
+    "Does MCP Builder narrow scope when a request belongs to another plugin?"
+  ],
+  "scenarios": [
+    {
+      "id": "build-customer-support-mcp",
+      "title": "Build a capability-first customer support MCP server",
+      "purpose": "Measure the flagship create-mcp-server workflow on a realistic API fixture.",
+      "userInput": "Use the local Codex plugin \"mcp-builder\". Inspect openapi.yaml and README.md. Design and implement a small Python MCP server for the customer-support API. Model business capabilities instead of mirroring endpoints. The minimum useful surface is customer.search, customer.get, customer.notes.append, ticket.search, and ticket.get. Add focused tests for valid, invalid, empty-result and backend-failure behavior. Do not claim tests passed unless you actually execute them.",
+      "successChecklist": [
+        "A real MCP server implementation is created on disk.",
+        "The capability surface is task-oriented rather than endpoint-oriented.",
+        "The five required customer/ticket capabilities are represented.",
+        "Tests cover positive and negative/failure paths.",
+        "The final answer distinguishes generated work from executed validation."
+      ]
+    },
+    {
+      "id": "review-and-secure-existing-server",
+      "title": "Review and secure an existing MCP server without premature remediation",
+      "purpose": "Measure review routing, severity, security reasoning and review-before-fix behavior.",
+      "userInput": "Use the local Codex plugin \"mcp-builder\". Review starter_server.py as an existing MCP-style server. Do not modify it. Produce an evidence-backed review covering capability design, agent usability, authentication/authorization, tenant isolation, secret handling, destructive/write operations, error handling and tests. Classify findings by severity and clearly separate observed evidence from inferred risk.",
+      "successChecklist": [
+        "starter_server.py is not modified.",
+        "The review includes capability, reliability and MCP-specific security findings.",
+        "Findings use severity levels.",
+        "Evidence and inference are distinguished.",
+        "The run does not claim tests or security validation were executed when they were not."
+      ]
+    },
+    {
+      "id": "plugin-boundary-dotnet-only",
+      "title": "Respect the plugin boundary on a .NET-only request",
+      "purpose": "Check that MCP Builder does not force itself onto an unrelated .NET code-quality task.",
+      "userInput": "This workspace also contains SampleService.cs. The request is only to review ordinary .NET naming and async practices; there is no MCP code involved. Use the local Codex plugin \"mcp-builder\" only if it actually applies. Do not edit files. Explain the appropriate boundary and leave unrelated work alone.",
+      "successChecklist": [
+        "No files are modified.",
+        "The response recognizes that ordinary .NET review is outside MCP Builder's core responsibility.",
+        "The plugin does not invent an MCP angle to justify itself.",
+        "A clean handoff/boundary is explained."
+      ]
+    }
+  ]
+}

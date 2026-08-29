@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Customer Support API
+  version: 1.0.0
+servers:
+  - url: https://support.example.test
+paths:
+  /customers:
+    get:
+      operationId: searchCustomers
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+      responses:
+        '200':
+          description: Customer search results
+  /customers/{customerId}:
+    get:
+      operationId: getCustomer
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Customer }
+        '404': { description: Not found }
+  /customers/{customerId}/notes:
+    post:
+      operationId: appendCustomerNote
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text: { type: string, minLength: 1 }
+      responses:
+        '201': { description: Note appended }
+  /tickets:
+    get:
+      operationId: searchTickets
+      parameters:
+        - in: query
+          name: customerId
+          schema: { type: string }
+        - in: query
+          name: status
+          schema: { type: string }
+      responses:
+        '200': { description: Ticket search results }
+  /tickets/{ticketId}:
+    get:
+      operationId: getTicket
+      parameters:
+        - in: path
+          name: ticketId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Ticket }
+        '404': { description: Not found }

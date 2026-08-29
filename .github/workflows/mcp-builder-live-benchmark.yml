@@ -1,0 +1,64 @@
+name: MCP Builder Live Benchmark
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Optional Codex model override"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    name: MCP Builder real Codex benchmark
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout AgentKit
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Checkout OpenAI plugins
+        uses: actions/checkout@v4
+        with:
+          repository: openai/plugins
+          path: .external/openai-plugins
+
+      - name: Verify Codex CLI
+        run: |
+          if ! command -v codex >/dev/null 2>&1; then
+            echo "Codex CLI is not installed on this GitHub-hosted runner."
+            echo "Use a runner/image with Codex installed and authenticated before enabling this benchmark."
+            exit 1
+          fi
+          codex --version
+
+      - name: Run real MCP Builder benchmark
+        env:
+          OPENAI_PLUGINS_DIR: ${{ github.workspace }}/.external/openai-plugins
+          AGENTKIT_BENCHMARK_MODEL: ${{ inputs.model }}
+        run: |
+          python scripts/run_mcp_builder_live_benchmark.py
+
+      - name: Upload plugin-eval benchmark artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-builder-plugin-eval
+          path: |
+            plugins/mcp-builder/.plugin-eval/runs/
+            plugins/mcp-builder/.plugin-eval/benchmark-usage.jsonl
+          if-no-files-found: warn
