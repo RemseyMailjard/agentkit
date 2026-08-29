@@ -7,11 +7,10 @@ Modular AI capabilities for Codex.
 AgentKit is a Codex plugin marketplace for Microsoft engineering, AI integrations,
 developer-quality workflows, knowledge, and hands-on training creation.
 
-## v0.2 alpha
+## Plugins
 
-The flagship plugin is **MCP Builder**.
-
-It includes six focused skills:
+The flagship plugin is **MCP Builder** (Developer Tools). It includes six focused
+skills:
 
 - `create-mcp-server`
 - `create-mcp-tool`
@@ -20,8 +19,18 @@ It includes six focused skills:
 - `secure-mcp-server`
 - `test-mcp-server`
 
-The repository also includes a growing behavioral evaluation suite for routing,
-quality, safety, and ambiguous requests.
+Three more plugins are included:
+
+- **.NET Reviewer** (Developer Tools) — `review-dotnet`, `review-aspnet-api`,
+  `review-ef-core`, `review-security`, `fix-findings`.
+- **Lab Generator** (Education) — `create-lab`, `create-challenge`, `review-lab`,
+  `test-lab`, `adapt-lab`.
+- **Training Creator** (Education) — `analyze-training-need`, `analyze-audience`,
+  `define-learning-objectives`, `design-training`, `create-assessment`,
+  `create-instructor-brief`, `review-training-readiness`, `adapt-training`.
+
+Each plugin has its own behavioral evaluation suite for routing, quality, safety, and
+ambiguous requests under `evals/<plugin-name>/cases.json`.
 
 ## Installing via Codex
 
@@ -35,19 +44,54 @@ repository as a Codex CLI marketplace and installing a plugin.
 ├── .agents/plugins/marketplace.json
 ├── AGENTS.md
 ├── docs/
-│   └── architecture.md
+│   ├── architecture.md
+│   ├── codex-installation.md
+│   ├── dotnet-reviewer.md
+│   ├── lab-generator.md
+│   ├── training-creator.md
+│   └── skills4it-training-methodology.md
 ├── evals/
-│   └── mcp-builder/cases.json
+│   ├── mcp-builder/cases.json
+│   ├── dotnet-reviewer/cases.json
+│   ├── lab-generator/cases.json
+│   └── training-creator/cases.json
 └── plugins/
-    └── mcp-builder/
+    ├── mcp-builder/
+    │   ├── .codex-plugin/plugin.json
+    │   └── skills/
+    │       ├── create-mcp-server/SKILL.md
+    │       ├── create-mcp-tool/SKILL.md
+    │       ├── review-mcp-server/SKILL.md
+    │       ├── reverse-engineer-api/SKILL.md
+    │       ├── secure-mcp-server/SKILL.md
+    │       └── test-mcp-server/SKILL.md
+    ├── dotnet-reviewer/
+    │   ├── .codex-plugin/plugin.json
+    │   └── skills/
+    │       ├── review-dotnet/SKILL.md
+    │       ├── review-aspnet-api/SKILL.md
+    │       ├── review-ef-core/SKILL.md
+    │       ├── review-security/SKILL.md
+    │       └── fix-findings/SKILL.md
+    ├── lab-generator/
+    │   ├── .codex-plugin/plugin.json
+    │   └── skills/
+    │       ├── create-lab/SKILL.md
+    │       ├── create-challenge/SKILL.md
+    │       ├── review-lab/SKILL.md
+    │       ├── test-lab/SKILL.md
+    │       └── adapt-lab/SKILL.md
+    └── training-creator/
         ├── .codex-plugin/plugin.json
         └── skills/
-            ├── create-mcp-server/SKILL.md
-            ├── create-mcp-tool/SKILL.md
-            ├── review-mcp-server/SKILL.md
-            ├── reverse-engineer-api/SKILL.md
-            ├── secure-mcp-server/SKILL.md
-            └── test-mcp-server/SKILL.md
+            ├── analyze-training-need/SKILL.md
+            ├── analyze-audience/SKILL.md
+            ├── define-learning-objectives/SKILL.md
+            ├── design-training/SKILL.md
+            ├── create-assessment/SKILL.md
+            ├── create-instructor-brief/SKILL.md
+            ├── review-training-readiness/SKILL.md
+            └── adapt-training/SKILL.md
 ```
 
 ## Design principles
@@ -62,18 +106,14 @@ repository as a Codex CLI marketplace and installing a plugin.
 
 ## Roadmap
 
-### v0.2
-- Harden MCP Builder
-- 15+ routing and quality eval cases
-- security and testing skills
+### Done
+- MCP Builder v0.2 (security and testing skills, routing/quality eval cases)
+- .NET Reviewer v0.1
+- Lab Generator v0.1
+- Training Creator v0.1
 
-### v0.3
-- .NET Reviewer
-- Lab Generator
+### Next
 - NoteBuddy MCP-backed plugin
-
-### v0.4
-- Training Creator
 - Azure
 - Power Platform
 - Microsoft 365 Copilot
