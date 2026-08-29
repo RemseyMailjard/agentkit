@@ -1,6 +1,6 @@
 {
   "name": "mcp-builder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Design, build, review, secure and test Model Context Protocol servers using repeatable Skills4-IT engineering workflows.",
   "author": {
     "name": "Skills4-IT"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "MCP Builder",
     "shortDescription": "Design, build, secure and test MCP servers",
-    "longDescription": "Skills4-IT workflows for designing MCP capabilities, implementing servers and tools, reverse-engineering APIs, reviewing security, testing implementations and improving MCP architecture.",
+    "longDescription": "Skills4-IT workflows for capability-first MCP design, implementation, review, security and testing.",
     "developerName": "Skills4-IT",
     "category": "Developer Tools",
     "capabilities": [
@@ -29,13 +29,12 @@
       "Write"
     ],
     "websiteURL": "https://skills4-it.nl/",
+    "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Build an MCP server for this API.",
-      "Review this MCP server.",
-      "Secure this MCP server.",
-      "Test this MCP server.",
-      "Add a new MCP tool.",
-      "Reverse engineer this API and design MCP capabilities."
+      "Build or extend an MCP server from this API or repository.",
+      "Review this MCP server for architecture, usability and security.",
+      "Test this MCP server and identify protocol, backend and failure-path issues."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

@@ -1,62 +1,15 @@
 ---
 name: review-mcp-server
 description: >
-  Review an MCP server for capability design, agent usability, architecture,
-  reliability, maintainability, testing and security. Review before modifying code.
+  Use when the user asks to review an MCP server for capability design, agent
+  usability, architecture, reliability, maintainability or testing. Review before fixing.
 ---
 
 # Review MCP Server
 
-Do not modify code during the initial review unless the user explicitly asks for fixes.
+Do not modify code during the initial review unless fixes are explicitly requested.
 
-## Review dimensions
-
-### Capability design
-- Are capabilities task-oriented rather than endpoint-oriented?
-- Is naming consistent and domain-focused?
-- Are there redundant or excessively granular tools?
-- Are read-only resources incorrectly modeled as actions?
-
-### Agent usability
-- Can a model reliably select the correct capability?
-- Are tool descriptions discriminative?
-- Are parameters understandable and minimal?
-- Are side effects clearly communicated?
-
-### Contracts
-- Strong schemas
-- Correct required/optional boundaries
-- Structured outputs
-- Useful error contracts
-
-### Architecture
-- Separation of MCP surface, domain logic and backend adapters
-- Configuration and dependency boundaries
-- Reuse and testability
-
-### Reliability
-- timeouts
-- retries where safe
-- partial failures
-- rate limiting
-- backend error mapping
-
-### Security
-- authentication
-- authorization
-- secret management
-- destructive operations
-- untrusted input
-- data exposure
-- least privilege
-
-### Testing
-- unit coverage
-- integration coverage
-- protocol/capability behavior
-- negative paths
-
-## Severity
+Review capability design, agent usability, contracts, architecture, reliability, security and testing.
 
 Classify findings as:
 - Critical
@@ -65,12 +18,6 @@ Classify findings as:
 - Low
 - Improvement
 
-## Output
+Return an executive summary, strongest aspects, top issues, evidence-backed findings and recommended fixes.
 
-Return:
-1. executive summary;
-2. strongest aspects;
-3. top five issues;
-4. detailed findings with evidence;
-5. recommended fixes;
-6. proposed target architecture where useful.
+Read [references/review-checklist.md](references/review-checklist.md) for the full rubric.
