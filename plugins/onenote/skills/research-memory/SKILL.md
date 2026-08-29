@@ -1,22 +1,12 @@
 ---
 name: research-memory
 description: >
-  Search existing OneNote knowledge across multiple notes to reconstruct prior
-  decisions, designs or historical context. Scaffold only.
+  Use when a user asks to research across existing OneNote knowledge to find
+  patterns, related notes, prior decisions or supporting context.
 ---
 
 # Research Memory
 
-Use when the answer depends on information spread across prior OneNote knowledge.
+Compare relevant durable knowledge and summarize the evidence.
 
-## Intended flow
-
-1. Define the research question.
-2. Search relevant notes/context.
-3. Combine evidence.
-4. Separate facts from inference.
-5. Produce a concise reconstructed answer.
-
-## Boundary
-
-No MCP/backend implementation is included in this scaffold.
+Clearly distinguish source material from inference and do not present unsupported memory as retrieved fact.

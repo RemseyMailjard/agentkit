@@ -1,22 +1,13 @@
 ---
 name: capture-knowledge
 description: >
-  Capture durable knowledge into OneNote after a useful conclusion, decision,
-  design or reusable insight has been produced. Scaffold only.
+  Use when a user asks to capture durable knowledge, notes, decisions or context
+  into the OneNote knowledge layer rather than create an action or reminder.
 ---
 
 # Capture Knowledge
 
-Use for durable knowledge, not transient actions.
+Capture concise reusable knowledge with enough context for later retrieval.
 
-## Intended flow
-
-1. Identify what is worth preserving.
-2. Summarize it cleanly.
-3. Select an appropriate knowledge category/location.
-4. Preserve important context and decisions.
-5. Avoid saving temporary task noise.
-
-## Boundary
-
-This scaffold does not yet implement the actual OneNote write operation.
+Do not turn temporary actions into durable knowledge.
+Do not claim a write succeeded without a working backend.

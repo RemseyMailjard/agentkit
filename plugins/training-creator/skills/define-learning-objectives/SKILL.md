@@ -1,66 +1,17 @@
 ---
 name: define-learning-objectives
 description: >
-  Define measurable, action-oriented learning objectives for an IT training.
-  Use after the training need and audience are understood, before detailed course design.
+  Use when a training needs measurable learning objectives derived from the
+  training need, audience and intended workplace outcomes.
 ---
 
 # Define Learning Objectives
 
-Learning objectives must describe participant behavior, not trainer activity.
+Write observable objectives using action verbs.
 
-Avoid vague wording such as:
+Each objective states:
+- what the learner can do;
+- relevant context or constraint;
+- what acceptable performance looks like.
 
-- understand;
-- know;
-- become familiar with.
-
-Prefer observable verbs such as:
-
-- configure;
-- create;
-- explain;
-- compare;
-- troubleshoot;
-- review;
-- deploy;
-- automate;
-- validate;
-- design.
-
-## Skills4-IT objective model
-
-Objectives should be:
-
-- action-oriented;
-- measurable;
-- work-relevant;
-- appropriate for the audience;
-- ordered from simple to more complex;
-- aligned with practice and assessment.
-
-Use Bloom-style progression when appropriate:
-
-```text
-recognize
-→ explain
-→ apply
-→ analyze
-→ evaluate
-→ create
-```
-
-## Output
-
-For each objective include:
-
-- objective statement;
-- observable evidence;
-- recommended exercise;
-- assessment method;
-- difficulty/depth.
-
-## Quality check
-
-Every major lab or assessment must map back to at least one learning objective.
-Every learning objective must be practiced or assessed somewhere in the course.
+Prefer a small set of strong objectives over a long topic list.
