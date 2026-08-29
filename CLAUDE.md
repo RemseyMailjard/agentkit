@@ -52,6 +52,14 @@ remediation workflows for .NET repositories under `plugins/dotnet-reviewer/skill
 workflows for hands-on IT labs under `plugins/lab-generator/skills/`: `create-lab`,
 `create-challenge`, `review-lab`, `test-lab`, `adapt-lab`.
 
+**Training Creator** (`plugins/training-creator/`, v0.1) — Education. Workflows for
+designing full IT training programs under `plugins/training-creator/skills/`:
+`analyze-training-need`, `analyze-audience`, `define-learning-objectives`,
+`design-training`, `create-assessment`, `create-instructor-brief`,
+`review-training-readiness`, `adapt-training`. Distinct from Lab Generator: this plugin
+covers the end-to-end course (needs analysis through delivery readiness), while Lab
+Generator produces individual hands-on lab exercises.
+
 ## Design principles (apply to any new skill/plugin)
 
 1. Capability-first, not endpoint-first — model business capabilities, don't mirror API

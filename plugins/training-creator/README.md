@@ -54,6 +54,19 @@ Lab Generator decides:
 
 > how the learner practices one concrete objective.
 
+## Example prompts
+
+> Maak een nieuwe MCP-training voor klant X.
+> Gebruik wat we al weten over eerdere trainingen,
+> de doelgroep en eerdere problemen.
+
+This is the kind of prompt Training Creator should route well: it names a concrete
+client and topic, and expects the skill to pull in prior context (past trainings,
+audience profile, known delivery issues) rather than starting from a blank template.
+It typically enters at `analyze-training-need`, and — because the topic is MCP —
+orchestrates with MCP Builder for the technical content and Lab Generator for the
+hands-on labs.
+
 ## Delivery philosophy
 
 A training is not ready merely because the slides are finished.
