@@ -23,6 +23,11 @@ It includes six focused skills:
 The repository also includes a growing behavioral evaluation suite for routing,
 quality, safety, and ambiguous requests.
 
+## Installing via Codex
+
+See [docs/codex-installation.md](./docs/codex-installation.md) for adding this
+repository as a Codex CLI marketplace and installing a plugin.
+
 ## Repository structure
 
 ```text
