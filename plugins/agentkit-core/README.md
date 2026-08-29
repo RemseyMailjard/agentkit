@@ -28,10 +28,11 @@ Skills and micro-tools stay compact instead of duplicating instructions.
 
 ## Core design rule
 
-Micro-tools are internal and composable, not marketplace entry points
-(see `docs/agentkit-core-microtools-v0.1.md`). A curated subset is also
-published as standalone Agent Skills for ChatGPT Work — see
-`docs/agentkit-core-chatgpt-skills-v0.1.md`.
+Micro-tools are internal and composable within this plugin, not
+marketplace entry points (see `docs/agentkit-core-microtools-v0.1.md`).
+Separately, all 299 are also published as standalone Agent Skills for
+ChatGPT Work — see `docs/agentkit-core-chatgpt-skills-v0.2.md` for the
+scope, the accepted routing-ambiguity trade-off, and how to rebuild.
 
 ## Registration
 
