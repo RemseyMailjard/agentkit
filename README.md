@@ -26,6 +26,46 @@ AgentKit
     └── OneNote v0.1 scaffold
 ```
 
+## Install and use in Codex
+
+Register this repository as the `skills4it` marketplace, inspect the available
+plugins, and install the smallest plugin that matches your task:
+
+```bash
+codex plugin marketplace add RemseyMailjard/agentkit --ref main
+codex plugin marketplace list
+codex plugin list --available --json
+codex plugin add mcp-builder@skills4it
+codex plugin list
+```
+
+Replace `mcp-builder` with `dotnet-reviewer`, `lab-generator`, `training-creator`, or
+`onenote` when another capability owns the request.
+
+Start a new Codex task after installing or reinstalling a plugin so its skills load
+cleanly. In the Codex app, click **New task**; on Windows you can also press
+`Ctrl+N` for a new task in the current context or `Ctrl+Alt+O` for a standalone task.
+
+Invoke the plugin by name:
+
+```text
+Use the MCP Builder plugin.
+
+Design an MCP server for this API.
+Create the capability map and architecture first; do not implement yet.
+```
+
+Or invoke one skill directly:
+
+```text
+$create-mcp-server
+
+Build an MCP server around this API.
+```
+
+See [Installing AgentKit via Codex CLI](docs/codex-installation.md) for the detailed
+installation flow and troubleshooting context.
+
 ## Core principle
 
 AgentKit is not a prompt library.
@@ -94,10 +134,12 @@ Training Creator
 .
 ├── .agents/plugins/marketplace.json
 ├── README.md
+├── INIT.md
 ├── AGENTS.md
 ├── CHANGELOG.md
 ├── docs/
 │   ├── architecture.md
+│   ├── codex-installation.md
 │   ├── routing-matrix.md
 │   └── plugin-contract.md
 ├── evals/
