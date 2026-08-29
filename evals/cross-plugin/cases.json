@@ -1,0 +1,208 @@
+[
+  {
+    "id": "mcp-vs-dotnet-security",
+    "prompt": "This is a .NET MCP server. Review .NET authentication and tenant isolation, and separately review MCP tool security.",
+    "expected_plugins": [
+      "dotnet-reviewer",
+      "mcp-builder"
+    ],
+    "expected_skills": [
+      "review-security",
+      "secure-mcp-server"
+    ],
+    "quality_checks": [
+      "layer separation",
+      "no duplicated findings",
+      "correct plugin ownership"
+    ]
+  },
+  {
+    "id": "training-with-mcp",
+    "prompt": "Design a one-day MCP training for .NET developers with a build lab and a security review exercise.",
+    "expected_plugins": [
+      "training-creator",
+      "mcp-builder",
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "design-training",
+      "create-mcp-server",
+      "secure-mcp-server",
+      "create-lab"
+    ],
+    "quality_checks": [
+      "training first",
+      "technical correctness",
+      "hands-on exercise",
+      "security included"
+    ]
+  },
+  {
+    "id": "existing-course-single-lab",
+    "prompt": "The course is already designed. Create only the 45-minute hands-on MCP exercise for module 3.",
+    "expected_plugins": [
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "create-lab"
+    ],
+    "quality_checks": [
+      "does not redesign course",
+      "single-lab scope",
+      "complete lab structure"
+    ]
+  },
+  {
+    "id": "onenote-before-training",
+    "prompt": "Use prior OneNote project context, then design an updated client training based on what already exists.",
+    "expected_plugins": [
+      "onenote",
+      "training-creator"
+    ],
+    "expected_skills": [
+      "project-context",
+      "design-training"
+    ],
+    "quality_checks": [
+      "context first",
+      "no invented prior history",
+      "training uses retrieved context"
+    ]
+  },
+  {
+    "id": "onenote-before-mcp",
+    "prompt": "Recall the existing architecture decisions from OneNote before proposing changes to this MCP server.",
+    "expected_plugins": [
+      "onenote",
+      "mcp-builder"
+    ],
+    "expected_skills": [
+      "recall-context",
+      "review-mcp-server"
+    ],
+    "quality_checks": [
+      "context retrieval precedes review",
+      "existing decisions respected",
+      "no context fabrication"
+    ]
+  },
+  {
+    "id": "dotnet-findings-to-lab",
+    "prompt": "Review this ASP.NET Core API and turn the most useful findings into a learner troubleshooting lab.",
+    "expected_plugins": [
+      "dotnet-reviewer",
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "review-aspnet-api",
+      "create-lab"
+    ],
+    "quality_checks": [
+      "review first",
+      "lab grounded in findings",
+      "realistic troubleshooting"
+    ]
+  },
+  {
+    "id": "training-readiness-only",
+    "prompt": "The training design is approved. Check only whether accounts, tenant, laptops and network restrictions make delivery possible.",
+    "expected_plugins": [
+      "training-creator"
+    ],
+    "expected_skills": [
+      "review-training-readiness"
+    ],
+    "quality_checks": [
+      "no redesign",
+      "operational focus",
+      "clear readiness status"
+    ]
+  },
+  {
+    "id": "mcp-review-only",
+    "prompt": "Review this MCP architecture. Do not modify code and do not do a general .NET review.",
+    "expected_plugins": [
+      "mcp-builder"
+    ],
+    "expected_skills": [
+      "review-mcp-server"
+    ],
+    "quality_checks": [
+      "MCP-only scope",
+      "no code edits",
+      "no .NET general review"
+    ]
+  },
+  {
+    "id": "dotnet-review-only",
+    "prompt": "Review this .NET repository for maintainability. Ignore MCP concerns even if an MCP package is present.",
+    "expected_plugins": [
+      "dotnet-reviewer"
+    ],
+    "expected_skills": [
+      "review-dotnet"
+    ],
+    "quality_checks": [
+      "scope respected",
+      "no MCP review",
+      "general .NET findings"
+    ]
+  },
+  {
+    "id": "lab-test-vs-training-readiness",
+    "prompt": "I only want to know whether this one lab is executable from start to finish, not whether the entire training is ready.",
+    "expected_plugins": [
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "test-lab"
+    ],
+    "quality_checks": [
+      "lab-level scope",
+      "no full-course readiness review",
+      "dependency validation"
+    ]
+  },
+  {
+    "id": "capture-after-design",
+    "prompt": "Design the training, then capture the durable decisions and structure into OneNote knowledge.",
+    "expected_plugins": [
+      "training-creator",
+      "onenote"
+    ],
+    "expected_skills": [
+      "design-training",
+      "capture-knowledge"
+    ],
+    "quality_checks": [
+      "design first",
+      "capture durable knowledge only",
+      "no transient task noise"
+    ]
+  },
+  {
+    "id": "full-golden-workflow",
+    "prompt": "Create a production-ready one-day MCP training for .NET developers, including learning objectives, build lab, security lab, assessment, instructor brief and readiness review.",
+    "expected_plugins": [
+      "training-creator",
+      "mcp-builder",
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "define-learning-objectives",
+      "design-training",
+      "create-mcp-server",
+      "secure-mcp-server",
+      "create-lab",
+      "create-assessment",
+      "create-instructor-brief",
+      "review-training-readiness"
+    ],
+    "quality_checks": [
+      "correct orchestration order",
+      "objectives map to labs",
+      "assessment alignment",
+      "delivery readiness included"
+    ]
+  }
+]

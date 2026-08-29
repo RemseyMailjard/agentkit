@@ -1,19 +1,20 @@
 # Changelog
 
-## 0.2.0
+## AgentKit 0.3 — Consolidation
 
-- renamed product presentation to AgentKit by Skills4-IT
-- corrected repository URLs to `RemseyMailjard/agentkit`
-- added `secure-mcp-server`
-- added `test-mcp-server`
-- expanded MCP Builder eval suite to 15 cases
-- added ambiguous routing and multi-skill scenarios
-- simplified marketplace policy
-- strengthened contributor quality rules
+- documented platform architecture
+- added central routing matrix
+- added plugin contract
+- added cross-plugin eval suite
+- registered golden workflows
+- consolidated five-plugin platform model
+- clarified OneNote as scaffold-only KNOW layer
+- strengthened repository contribution rules
 
-## 0.1.0
+## Current plugins
 
-- initial marketplace
-- initial MCP Builder plugin
-- four foundational skills
-- initial evaluation cases
+- MCP Builder v0.2
+- .NET Reviewer v0.1
+- Lab Generator v0.1
+- Training Creator v0.1
+- OneNote v0.1 scaffold

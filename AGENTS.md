@@ -4,23 +4,34 @@
 
 AgentKit is the Skills4-IT Codex plugin marketplace.
 
-## Contribution rules
+## Platform rules
 
-- Keep skills small and task-focused.
-- Prefer capability-first design over endpoint mirroring.
-- Add or update eval cases whenever routing behavior changes.
-- Separate review from remediation unless a workflow explicitly requires both.
-- Do not weaken security controls or tests to make generated code appear successful.
-- Do not claim commands/tests were executed unless execution evidence exists.
-- Keep plugin manifests and repository URLs current.
+- Prefer the smallest correct plugin/skill set.
+- Do not invoke multiple plugins unless the request spans multiple responsibilities.
+- Respect plugin ownership defined in `docs/routing-matrix.md`.
+- Review before remediation unless the user asks for both.
+- Never claim execution success without evidence.
+- Keep durable knowledge separate from transient tasks.
+- Add or update evals when routing behavior changes.
+- Keep golden workflows representative of real end-to-end usage.
 
-## MCP Builder quality bar
+## Contribution requirements
 
-Every new MCP Builder skill should define:
+Every new plugin or major skill change should update, where applicable:
 
-1. when it should be used;
-2. when it should not be used or what neighboring skill is preferable;
-3. a repeatable workflow;
-4. safety or side-effect considerations;
-5. a concrete output contract;
-6. at least one eval case.
+- plugin manifest;
+- README;
+- changelog;
+- evals;
+- routing matrix;
+- architecture docs;
+- golden workflow if orchestration changes.
+
+## Stability priority
+
+Before expanding the marketplace, verify:
+
+1. routing boundaries;
+2. eval coverage;
+3. documentation;
+4. cross-plugin behavior.
