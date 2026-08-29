@@ -1,0 +1,69 @@
+{
+  "plugin": "agentkit-core-chatgpt-skills",
+  "version": 1,
+  "note": "Routing cases for the standalone Agent Skills bundles under distribution/chatgpt-skills/, generated per docs/agentkit-core-chatgpt-skills-v0.1.md. These are separate skills, not the agentkit-core plugin's own skills.",
+  "cases": [
+    {
+      "id": "clarity-ambiguous-instruction",
+      "input": "Check this instruction for wording that could be misread before I send it to the team.",
+      "expected_skills": [
+        "clarity-checker"
+      ]
+    },
+    {
+      "id": "risk-pre-deploy",
+      "input": "Scan this deployment plan for anything that could be unsafe or costly before we run it.",
+      "expected_skills": [
+        "risk-scanner"
+      ]
+    },
+    {
+      "id": "evidence-fact-check",
+      "input": "Which of these claims in the report are actually backed by evidence versus just asserted?",
+      "expected_skills": [
+        "evidence-checker"
+      ]
+    },
+    {
+      "id": "tone-audience-fit",
+      "input": "Does this message's tone fit a senior enterprise audience, or should I adjust it?",
+      "expected_skills": [
+        "tone-fit-checker"
+      ]
+    },
+    {
+      "id": "root-cause-incident",
+      "input": "This bug keeps recurring after every deploy. Find the actual root cause, not just the workaround.",
+      "expected_skills": [
+        "root-cause-analyzer"
+      ]
+    },
+    {
+      "id": "compare-approaches",
+      "input": "Compare these three database options and tell me which fits our constraints best.",
+      "expected_skills": [
+        "option-comparator"
+      ]
+    },
+    {
+      "id": "requirements-review",
+      "input": "Review these requirements and tell me which ones are too ambiguous to implement yet.",
+      "expected_skills": [
+        "requirement-quality-checker"
+      ]
+    },
+    {
+      "id": "edge-case-stress-test",
+      "input": "What edge cases could break this file-upload feature?",
+      "expected_skills": [
+        "edge-case-finder"
+      ]
+    },
+    {
+      "id": "boundary-not-clarity",
+      "input": "Rewrite this whole document to be more persuasive.",
+      "expected_skills": [],
+      "note": "Broader rewriting is explicitly out of scope for clarity-checker per its Boundary section; no standalone skill should claim this."
+    }
+  ]
+}
