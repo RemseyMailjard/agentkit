@@ -1,0 +1,41 @@
+name: Runtime Eval Smoke Test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "evals/**"
+      - "scripts/run_runtime_evals.py"
+      - ".github/workflows/runtime-evals.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: Runtime eval harness smoke test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run fixture smoke test
+        run: |
+          python scripts/run_runtime_evals.py             --cases "evals/runtime/smoke-cases.json"             --runner fixture             --fixtures evals/runtime/fixtures.json             --json-out evals/runtime/results.json             --markdown-out evals/runtime/results.md
+
+      - name: Add runtime eval summary
+        if: always()
+        run: |
+          echo "## AgentKit Runtime Eval" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f evals/runtime/results.md ]; then
+            cat evals/runtime/results.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No runtime eval report produced." >> "$GITHUB_STEP_SUMMARY"
+          fi

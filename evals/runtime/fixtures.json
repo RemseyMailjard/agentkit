@@ -1,0 +1,33 @@
+{
+  "mcp-vs-dotnet-security": {
+    "actual_plugins": [
+      "dotnet-reviewer",
+      "mcp-builder"
+    ],
+    "actual_skills": [
+      "review-security",
+      "secure-mcp-server"
+    ]
+  },
+  "training-with-mcp": {
+    "actual_plugins": [
+      "training-creator",
+      "mcp-builder",
+      "lab-generator"
+    ],
+    "actual_skills": [
+      "design-training",
+      "create-mcp-server",
+      "secure-mcp-server",
+      "create-lab"
+    ]
+  },
+  "existing-course-single-lab": {
+    "actual_plugins": [
+      "lab-generator"
+    ],
+    "actual_skills": [
+      "create-lab"
+    ]
+  }
+}

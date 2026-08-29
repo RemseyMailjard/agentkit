@@ -1,0 +1,39 @@
+[
+  {
+    "id": "mcp-vs-dotnet-security",
+    "prompt": "This is a .NET MCP server. Review .NET authentication and tenant isolation, and separately review MCP tool security.",
+    "expected_plugins": [
+      "dotnet-reviewer",
+      "mcp-builder"
+    ],
+    "expected_skills": [
+      "review-security",
+      "secure-mcp-server"
+    ]
+  },
+  {
+    "id": "training-with-mcp",
+    "prompt": "Design a one-day MCP training for .NET developers with a build lab and a security review exercise.",
+    "expected_plugins": [
+      "training-creator",
+      "mcp-builder",
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "design-training",
+      "create-mcp-server",
+      "secure-mcp-server",
+      "create-lab"
+    ]
+  },
+  {
+    "id": "existing-course-single-lab",
+    "prompt": "The course is already designed. Create only the 45-minute hands-on MCP exercise for module 3.",
+    "expected_plugins": [
+      "lab-generator"
+    ],
+    "expected_skills": [
+      "create-lab"
+    ]
+  }
+]
