@@ -17,6 +17,42 @@ The important assets are plugin manifests, `SKILL.md` workflows, routing and qua
 evals, architecture documentation, and representative golden workflows. This is not
 a conventional application repository.
 
+## Two ways to use this repository
+
+- **Develop AgentKit:** change plugins, skills, routing, evals, documentation, and
+  golden workflows using the contribution sequence below.
+- **Use AgentKit in Codex:** register this repository as a marketplace, install the
+  smallest relevant plugin, and invoke the plugin or one of its skills in a Codex
+  prompt.
+
+`docs/codex-installation.md` is the repository's canonical installation and usage
+guide. The short CLI path is:
+
+```powershell
+codex plugin marketplace add RemseyMailjard/agentkit --ref main
+codex plugin marketplace list
+codex plugin list --available --json
+codex plugin add mcp-builder@skills4it
+codex plugin list
+```
+
+Replace `mcp-builder` with another plugin name from
+`.agents/plugins/marketplace.json`. Start a new Codex task after installing or
+reinstalling a plugin. Then either request the plugin explicitly:
+
+```text
+Use the MCP Builder plugin to design an MCP server for this API.
+Create the capability map and architecture first; do not implement yet.
+```
+
+Or invoke a specific skill:
+
+```text
+$create-mcp-server
+
+Build an MCP server around this API.
+```
+
 ## Start every task
 
 1. Read `AGENTS.md` and check `git status --short`; preserve unrelated user changes.
@@ -46,6 +82,9 @@ Run the static quality gate after repository changes:
 ```powershell
 python scripts/validate_agentkit.py
 ```
+
+If `python` is not on `PATH` in Codex Desktop, use the bundled Python executable
+reported by the workspace dependency lookup instead of installing another runtime.
 
 When routing or runtime-eval behavior changes, also run the relevant eval suite. The
 fixture-backed smoke command is documented in `docs-runtime-evals.md`; live Codex runs

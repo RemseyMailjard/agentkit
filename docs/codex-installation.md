@@ -30,8 +30,9 @@ agentkit/
 ```
 
 Codex discovers plugins through `marketplace.json`; each plugin also carries its own
-`.codex-plugin/plugin.json`. This repo already satisfies this layout for all four
-plugins (`mcp-builder`, `dotnet-reviewer`, `lab-generator`, `training-creator`).
+`.codex-plugin/plugin.json`. This repo already satisfies this layout for all five
+registered plugins (`mcp-builder`, `dotnet-reviewer`, `lab-generator`,
+`training-creator`, `onenote`).
 
 ## Steps
 
@@ -53,7 +54,7 @@ plugins (`mcp-builder`, `dotnet-reviewer`, `lab-generator`, `training-creator`).
 3. **List available plugins:**
 
    ```bash
-   codex plugin list --available
+   codex plugin list --available --json
    ```
 
    `mcp-builder` (and the other plugins registered in `marketplace.json`) should
