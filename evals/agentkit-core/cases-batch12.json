@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 12,
+  "cases": [
+    {
+      "id": "module",
+      "input": "Build a practical training module from this learning objective with demo, guided practice and challenge.",
+      "expected_skills": [
+        "build-training-module"
+      ]
+    },
+    {
+      "id": "demo",
+      "input": "Design a reliable instructor demo including talking points and fallback if the enterprise environment blocks it.",
+      "expected_skills": [
+        "design-trainer-demo"
+      ]
+    },
+    {
+      "id": "review",
+      "input": "Review these slides and exercises for teaching value, realism and timing.",
+      "expected_skills": [
+        "review-training-content"
+      ]
+    },
+    {
+      "id": "day",
+      "input": "Turn these modules into a realistic one-day classroom agenda with enough hands-on time.",
+      "expected_skills": [
+        "plan-training-day"
+      ]
+    }
+  ]
+}

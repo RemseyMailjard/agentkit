@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 11,
+  "cases": [
+    {
+      "id": "m365",
+      "input": "Design a Microsoft 365 solution for this business process and choose between Lists, Power Apps, Automate and Copilot Studio.",
+      "expected_skills": [
+        "design-m365-solution"
+      ]
+    },
+    {
+      "id": "pp",
+      "input": "Design this Power Platform solution including Dataverse, environments, ALM, identity and DLP.",
+      "expected_skills": [
+        "design-power-platform-solution"
+      ]
+    },
+    {
+      "id": "azure",
+      "input": "Design the minimal Azure integration architecture for this API-backed workflow.",
+      "expected_skills": [
+        "design-azure-integration"
+      ]
+    },
+    {
+      "id": "auto",
+      "input": "Assess which parts of this process should be automated and whether an agent is actually needed.",
+      "expected_skills": [
+        "assess-automation-opportunity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 5,
+  "cases": [
+    {
+      "id": "mvp",
+      "input": "Cut this idea down to the smallest MVP that can prove the customer value.",
+      "expected_skills": [
+        "design-mvp"
+      ]
+    },
+    {
+      "id": "offering",
+      "input": "Turn this repeatable consulting capability into a sellable package with pricing logic and differentiation.",
+      "expected_skills": [
+        "design-offering"
+      ]
+    },
+    {
+      "id": "governance",
+      "input": "Design minimum viable governance for this AI capability without creating unnecessary bureaucracy.",
+      "expected_skills": [
+        "design-governance"
+      ]
+    },
+    {
+      "id": "pilot",
+      "input": "Design a pilot with success metrics and clear go/no-go criteria.",
+      "expected_skills": [
+        "design-pilot"
+      ]
+    }
+  ]
+}

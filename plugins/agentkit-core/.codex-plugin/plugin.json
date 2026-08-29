@@ -1,7 +1,7 @@
 {
   "name": "agentkit-core",
-  "version": "0.3.0",
-  "description": "Personalized AgentKit core workflows for quality, action, decisions, requirements, testing, change planning and evidence-driven completion.",
+  "version": "1.2.0",
+  "description": "Personalized Skills4-IT core workflows spanning knowledge, Microsoft cloud architecture, engineering, AI agents, consulting, training and execution.",
   "author": {
     "name": "Skills4-IT"
   },
@@ -10,18 +10,18 @@
   "license": "MIT",
   "keywords": [
     "agentkit",
-    "quality",
-    "productivity",
-    "requirements",
-    "testing",
-    "decision-support",
+    "microsoft-365",
+    "power-platform",
+    "azure",
+    "training",
+    "knowledge",
     "micro-tools"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "AgentKit Core",
-    "shortDescription": "Personalized quality and execution workflows",
-    "longDescription": "Composable Skills4-IT workflows for action, decisions, requirements, testing, change planning, evidence and completion.",
+    "shortDescription": "Personalized Microsoft and AI execution workflows",
+    "longDescription": "Composable Skills4-IT workflows for Microsoft cloud solutions, knowledge quality, training production, engineering, AI agents and consulting.",
     "developerName": "Skills4-IT",
     "category": "Productivity",
     "capabilities": [
@@ -32,9 +32,9 @@
     "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Analyze these requirements and make them implementation-ready.",
-      "Compare these options and recommend the best practical direction.",
-      "Plan this change including impact, rollback and verification."
+      "Build the smallest relevant context and identify what knowledge is trustworthy.",
+      "Design this Microsoft 365, Power Platform or Azure solution from the business capability.",
+      "Turn this learning objective into a practical training module or delivery plan."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

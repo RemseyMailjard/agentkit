@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 6,
+  "cases": [
+    {
+      "id": "close",
+      "input": "Can I close this client work item or is something still missing?",
+      "expected_skills": [
+        "close-work-item"
+      ]
+    },
+    {
+      "id": "meeting",
+      "input": "Process these meeting notes into decisions, actions, owners and waiting-for items.",
+      "expected_skills": [
+        "process-meeting-outcomes"
+      ]
+    },
+    {
+      "id": "weekly",
+      "input": "Run my weekly review and tell me what I should finish first next week.",
+      "expected_skills": [
+        "run-weekly-review"
+      ]
+    },
+    {
+      "id": "continuation",
+      "input": "Create a clean continuation checkpoint so another AI can resume this project later.",
+      "expected_skills": [
+        "prepare-continuation"
+      ]
+    }
+  ]
+}

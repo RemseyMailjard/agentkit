@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 9,
+  "cases": [
+    {
+      "id": "proposal",
+      "input": "Turn this client request into a scoped proposal shape with deliverables, value and proof metrics.",
+      "expected_skills": [
+        "shape-client-proposal"
+      ]
+    },
+    {
+      "id": "research",
+      "input": "Research this question to support a decision, not just summarize information.",
+      "expected_skills": [
+        "conduct-decision-research"
+      ]
+    },
+    {
+      "id": "ip",
+      "input": "What reusable IP can I extract from this completed client project and training?",
+      "expected_skills": [
+        "extract-reusable-ip"
+      ]
+    },
+    {
+      "id": "reuse",
+      "input": "Repurpose this training and research into useful assets for different audiences.",
+      "expected_skills": [
+        "plan-content-reuse"
+      ]
+    }
+  ]
+}

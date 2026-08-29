@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 4,
+  "cases": [
+    {
+      "id": "training-ready",
+      "input": "Check whether this workshop is actually ready to deliver, including participant access and fallback demos.",
+      "expected_skills": [
+        "assess-training-readiness"
+      ]
+    },
+    {
+      "id": "adoption-friction",
+      "input": "Why are employees not adopting this AI assistant and what should we change?",
+      "expected_skills": [
+        "analyze-adoption"
+      ]
+    },
+    {
+      "id": "enterprise-rollout",
+      "input": "Design a controlled enterprise rollout for Microsoft Copilot including governance, pilot and adoption.",
+      "expected_skills": [
+        "design-enterprise-rollout"
+      ]
+    },
+    {
+      "id": "product-opportunity",
+      "input": "I keep doing this consulting task for clients. Should I turn it into a product or managed service?",
+      "expected_skills": [
+        "assess-product-opportunity"
+      ]
+    }
+  ]
+}

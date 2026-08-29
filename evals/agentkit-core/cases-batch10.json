@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 10,
+  "cases": [
+    {
+      "id": "curate",
+      "input": "Clean these project notes into durable knowledge, avoiding duplicates and stale information.",
+      "expected_skills": [
+        "curate-knowledge"
+      ]
+    },
+    {
+      "id": "context",
+      "input": "Build only the context this task needs from this large project history.",
+      "expected_skills": [
+        "build-task-context"
+      ]
+    },
+    {
+      "id": "audit",
+      "input": "Audit this knowledge set for stale, duplicate and unsupported information.",
+      "expected_skills": [
+        "audit-knowledge-quality"
+      ]
+    },
+    {
+      "id": "compress",
+      "input": "Compress this long conversation but keep decisions, commitments and next actions.",
+      "expected_skills": [
+        "compress-context"
+      ]
+    }
+  ]
+}

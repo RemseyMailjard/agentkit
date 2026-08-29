@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 8,
+  "cases": [
+    {
+      "id": "agentdesign",
+      "input": "Review this AI agent design for responsibility overlap, tool choice, approvals and escalation.",
+      "expected_skills": [
+        "review-agent-design"
+      ]
+    },
+    {
+      "id": "agentsecure",
+      "input": "Review this agent workflow for prompt injection, unsafe memory and risky tool side effects.",
+      "expected_skills": [
+        "secure-agent-workflow"
+      ]
+    },
+    {
+      "id": "agentevals",
+      "input": "Create eval cases for routing, tool selection, failure handling and forbidden behavior.",
+      "expected_skills": [
+        "design-agent-evals"
+      ]
+    },
+    {
+      "id": "agentready",
+      "input": "Is this AI agent ready for a pilot or production? Assess blockers and evidence gaps.",
+      "expected_skills": [
+        "assess-agent-readiness"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 7,
+  "cases": [
+    {
+      "id": "diagnose",
+      "input": "Diagnose this intermittent production error and tell me the next discriminating check.",
+      "expected_skills": [
+        "diagnose-technical-issue"
+      ]
+    },
+    {
+      "id": "fixrisk",
+      "input": "Review this proposed fix for blast radius, rollback and verification risk.",
+      "expected_skills": [
+        "review-fix-plan"
+      ]
+    },
+    {
+      "id": "incident",
+      "input": "Build an incident analysis from these logs and notes, including timeline, root cause and prevention.",
+      "expected_skills": [
+        "analyze-incident"
+      ]
+    },
+    {
+      "id": "observability",
+      "input": "We cannot reliably debug this service because telemetry is weak. What observability should we add?",
+      "expected_skills": [
+        "improve-observability"
+      ]
+    }
+  ]
+}

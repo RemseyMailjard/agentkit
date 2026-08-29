@@ -1,7 +1,5 @@
 # Changelog
-
-## 0.3.0
-- Added shared Skills4-IT personal context for work, engineering, training, consultancy and decisions.
-- Added 10 development/consultancy micro-tools.
-- Added Skills: analyze-requirements, generate-test-strategy, compare-options and plan-change.
-- Added personalized routing and boundary eval cases.
+## 1.2.0
+- Added knowledge curation and context optimization workflows.
+- Added Microsoft 365, Power Platform and Azure solution design workflows.
+- Added technical training module, demo, review and day-planning workflows.
