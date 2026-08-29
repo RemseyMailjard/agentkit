@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "onenote": {
+      "type": "http",
+      "url": "https://REPLACE-WITH-ONENOTE-MCP-ENDPOINT",
+      "description": "Placeholder only. Replace with the future OneNote MCP endpoint."
+    }
+  }
+}
