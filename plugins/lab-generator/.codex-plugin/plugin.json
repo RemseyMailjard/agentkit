@@ -1,0 +1,42 @@
+{
+  "name": "lab-generator",
+  "version": "0.1.0",
+  "description": "Create, review, test and adapt practical hands-on IT labs using repeatable Skills4-IT instructional design workflows.",
+  "author": {
+    "name": "Skills4-IT"
+  },
+  "homepage": "https://github.com/RemseyMailjard/agentkit",
+  "repository": "https://github.com/RemseyMailjard/agentkit",
+  "license": "MIT",
+  "keywords": [
+    "training",
+    "hands-on-lab",
+    "education",
+    "learning",
+    "microsoft",
+    "developer-training"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Lab Generator",
+    "shortDescription": "Create and improve hands-on IT labs",
+    "longDescription": "Skills4-IT workflows for creating realistic technical labs, challenges, lab reviews, lab validation and audience adaptation.",
+    "developerName": "Skills4-IT",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://skills4-it.nl/",
+    "defaultPrompt": [
+      "Create a 45-minute hands-on lab for this topic.",
+      "Create a challenge exercise based on this lab.",
+      "Review this technical lab before delivery.",
+      "Test whether this lab is executable and complete.",
+      "Adapt this lab for a less experienced audience."
+    ],
+    "brandColor": "#512BD4",
+    "screenshots": []
+  }
+}

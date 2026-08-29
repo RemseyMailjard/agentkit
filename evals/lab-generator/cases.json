@@ -1,0 +1,173 @@
+[
+  {
+    "id": "create-azure-functions-lab",
+    "prompt": "Create a 45-minute hands-on lab for intermediate developers on Azure Functions with managed identity.",
+    "expected_skill": "create-lab",
+    "quality_checks": [
+      "realistic scenario",
+      "environment check",
+      "checkpoints",
+      "challenge",
+      "cleanup"
+    ]
+  },
+  {
+    "id": "create-power-automate-lab",
+    "prompt": "Create a beginner-friendly hands-on lab where participants build a Power Automate approval flow.",
+    "expected_skill": "create-lab",
+    "quality_checks": [
+      "beginner scaffolding",
+      "observable objectives",
+      "prerequisites",
+      "expected result"
+    ]
+  },
+  {
+    "id": "challenge-from-existing-lab",
+    "prompt": "Create a challenge exercise based on this lab. Learners should not receive step-by-step instructions.",
+    "expected_skill": "create-challenge",
+    "quality_checks": [
+      "transfer task",
+      "reduced guidance",
+      "success criteria",
+      "optional hints"
+    ]
+  },
+  {
+    "id": "review-before-delivery",
+    "prompt": "Review this lab for clarity, pacing and missing prerequisites. Do not rewrite it yet.",
+    "expected_skill": "review-lab",
+    "quality_checks": [
+      "no rewrite",
+      "severity classification",
+      "prerequisite risks",
+      "pacing review"
+    ]
+  },
+  {
+    "id": "test-executability",
+    "prompt": "Validate whether this lab can actually be completed from start to finish with the stated prerequisites.",
+    "expected_skill": "test-lab",
+    "quality_checks": [
+      "dependency trace",
+      "hidden assumptions",
+      "blockers",
+      "no false execution claim"
+    ]
+  },
+  {
+    "id": "adapt-for-beginners",
+    "prompt": "Adapt this intermediate Azure lab for beginners while keeping the same learning objective.",
+    "expected_skill": "adapt-lab",
+    "quality_checks": [
+      "objective preserved",
+      "more scaffolding",
+      "prerequisites reduced",
+      "timing revised"
+    ]
+  },
+  {
+    "id": "adapt-for-restricted-access",
+    "prompt": "Adapt this lab for participants who cannot create Azure resources themselves.",
+    "expected_skill": "adapt-lab",
+    "quality_checks": [
+      "restricted-permission fallback",
+      "learning goal preserved",
+      "environment assumptions updated"
+    ]
+  },
+  {
+    "id": "review-vs-test",
+    "prompt": "I don't want a didactic review. I need to know whether every step and dependency in this lab is executable.",
+    "expected_skill": "test-lab",
+    "quality_checks": [
+      "execution-readiness focus",
+      "dependency validation",
+      "no generic pedagogy review"
+    ]
+  },
+  {
+    "id": "review-lab-didactics",
+    "prompt": "Check whether this lab teaches well: objectives, pacing, challenge quality and learner clarity.",
+    "expected_skill": "review-lab",
+    "quality_checks": [
+      "didactic focus",
+      "objectives mapping",
+      "challenge quality",
+      "clarity"
+    ]
+  },
+  {
+    "id": "full-lab-not-challenge",
+    "prompt": "Build a complete 60-minute SQL performance lab with scenario, steps, checkpoints, troubleshooting and challenge.",
+    "expected_skill": "create-lab",
+    "quality_checks": [
+      "full structure",
+      "not challenge-only",
+      "troubleshooting",
+      "time estimate"
+    ]
+  },
+  {
+    "id": "challenge-troubleshooting",
+    "prompt": "Create an advanced challenge where learners must diagnose a deliberately broken .NET API.",
+    "expected_skill": "create-challenge",
+    "quality_checks": [
+      "diagnostic transfer",
+      "minimal guidance",
+      "success criteria",
+      "solution notes"
+    ]
+  },
+  {
+    "id": "cross-plugin-dotnet",
+    "prompt": "Review this .NET code for bugs and then turn the findings into a hands-on learner exercise.",
+    "expected_skills": [
+      "review-dotnet",
+      "create-lab"
+    ],
+    "quality_checks": [
+      "code review first",
+      "lab based on findings",
+      "layer separation",
+      "real exercise"
+    ]
+  },
+  {
+    "id": "cross-plugin-mcp",
+    "prompt": "Create a hands-on lab where learners build a small MCP server with two tools and then security-review it.",
+    "expected_skills": [
+      "create-lab",
+      "create-mcp-server",
+      "secure-mcp-server"
+    ],
+    "quality_checks": [
+      "lab orchestration",
+      "MCP build task",
+      "security review task",
+      "clear learner checkpoints"
+    ]
+  },
+  {
+    "id": "online-adaptation",
+    "prompt": "Adapt this classroom lab for online delivery with participants working individually.",
+    "expected_skill": "adapt-lab",
+    "quality_checks": [
+      "online constraints",
+      "independent checkpoints",
+      "support assumptions",
+      "timing revised"
+    ]
+  },
+  {
+    "id": "static-review-not-executed",
+    "prompt": "Dry-run this lab from the text only and tell me what may fail. Do not claim you executed anything.",
+    "expected_skill": "test-lab",
+    "quality_checks": [
+      "static validation",
+      "observed vs inferred",
+      "no false execution claim",
+      "failure points"
+    ]
+  }
+]
