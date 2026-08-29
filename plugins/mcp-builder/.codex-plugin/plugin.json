@@ -1,7 +1,7 @@
 {
   "name": "mcp-builder",
-  "version": "0.1.0",
-  "description": "Design, build, review and improve Model Context Protocol servers using repeatable Skills4-IT engineering workflows.",
+  "version": "0.2.0",
+  "description": "Design, build, review, secure and test Model Context Protocol servers using repeatable Skills4-IT engineering workflows.",
   "author": {
     "name": "Skills4-IT"
   },
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "MCP Builder",
-    "shortDescription": "Design, build and review MCP servers",
-    "longDescription": "Skills4-IT workflows for designing MCP capabilities, implementing servers and tools, reverse-engineering APIs, testing implementations and reviewing MCP architecture.",
+    "shortDescription": "Design, build, secure and test MCP servers",
+    "longDescription": "Skills4-IT workflows for designing MCP capabilities, implementing servers and tools, reverse-engineering APIs, reviewing security, testing implementations and improving MCP architecture.",
     "developerName": "Skills4-IT",
     "category": "Developer Tools",
     "capabilities": [
@@ -32,6 +32,8 @@
     "defaultPrompt": [
       "Build an MCP server for this API.",
       "Review this MCP server.",
+      "Secure this MCP server.",
+      "Test this MCP server.",
       "Add a new MCP tool.",
       "Reverse engineer this API and design MCP capabilities."
     ],

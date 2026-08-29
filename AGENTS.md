@@ -1,27 +1,26 @@
-# Skills4-IT Codex Marketplace — Contributor Instructions
+# AGENTS.md
 
-This repository contains Skills4-IT Codex plugins.
+## Repository purpose
 
-## Principles
+AgentKit is the Skills4-IT Codex plugin marketplace.
 
-- Prefer small, composable skills over monolithic instruction files.
-- Design agent capabilities around user tasks and business semantics, not raw API endpoints.
-- Keep generated implementations testable and production-oriented.
-- Never add secrets, tokens or customer data to the repository.
-- Treat review and remediation as separate workflows unless explicitly combined.
-- Add evaluation cases when adding or materially changing a skill.
+## Contribution rules
 
-## Plugin structure
+- Keep skills small and task-focused.
+- Prefer capability-first design over endpoint mirroring.
+- Add or update eval cases whenever routing behavior changes.
+- Separate review from remediation unless a workflow explicitly requires both.
+- Do not weaken security controls or tests to make generated code appear successful.
+- Do not claim commands/tests were executed unless execution evidence exists.
+- Keep plugin manifests and repository URLs current.
 
-Each plugin lives under `plugins/<plugin-name>/` and must contain
-`.codex-plugin/plugin.json`. Skills belong under `skills/<skill-name>/SKILL.md`.
+## MCP Builder quality bar
 
-## Quality bar
+Every new MCP Builder skill should define:
 
-A new skill should have:
-
-- a specific routing description;
-- clear workflow steps;
-- explicit output expectations;
-- relevant safety/reliability constraints;
-- at least one evaluation case.
+1. when it should be used;
+2. when it should not be used or what neighboring skill is preferable;
+3. a repeatable workflow;
+4. safety or side-effect considerations;
+5. a concrete output contract;
+6. at least one eval case.

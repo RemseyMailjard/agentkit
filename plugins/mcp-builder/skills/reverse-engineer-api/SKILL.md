@@ -30,13 +30,9 @@ inference and clearly mark unknowns.
 ## Output model
 
 ### System summary
-
 ### Observed architecture
-
 ### Authentication and authorization
-
 ### Data/contracts
-
 ### Capability map
 
 | Capability | Type | Backend source | Side effect | Risk |
@@ -45,7 +41,6 @@ inference and clearly mark unknowns.
 ### Proposed MCP surface
 
 For each capability include:
-
 - name;
 - purpose;
 - input;

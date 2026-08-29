@@ -12,34 +12,29 @@ Do not modify code during the initial review unless the user explicitly asks for
 ## Review dimensions
 
 ### Capability design
-
 - Are capabilities task-oriented rather than endpoint-oriented?
 - Is naming consistent and domain-focused?
 - Are there redundant or excessively granular tools?
 - Are read-only resources incorrectly modeled as actions?
 
 ### Agent usability
-
 - Can a model reliably select the correct capability?
 - Are tool descriptions discriminative?
 - Are parameters understandable and minimal?
 - Are side effects clearly communicated?
 
 ### Contracts
-
 - Strong schemas
 - Correct required/optional boundaries
 - Structured outputs
 - Useful error contracts
 
 ### Architecture
-
 - Separation of MCP surface, domain logic and backend adapters
 - Configuration and dependency boundaries
 - Reuse and testability
 
 ### Reliability
-
 - timeouts
 - retries where safe
 - partial failures
@@ -47,7 +42,6 @@ Do not modify code during the initial review unless the user explicitly asks for
 - backend error mapping
 
 ### Security
-
 - authentication
 - authorization
 - secret management
@@ -57,7 +51,6 @@ Do not modify code during the initial review unless the user explicitly asks for
 - least privilege
 
 ### Testing
-
 - unit coverage
 - integration coverage
 - protocol/capability behavior
@@ -66,7 +59,6 @@ Do not modify code during the initial review unless the user explicitly asks for
 ## Severity
 
 Classify findings as:
-
 - Critical
 - High
 - Medium
@@ -76,7 +68,6 @@ Classify findings as:
 ## Output
 
 Return:
-
 1. executive summary;
 2. strongest aspects;
 3. top five issues;

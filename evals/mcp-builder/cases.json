@@ -41,5 +41,125 @@
       "evidence separated from inference",
       "tool/resource distinction"
     ]
+  },
+  {
+    "id": "security-review",
+    "prompt": "Security review this MCP server. Pay special attention to authorization, secrets and destructive actions. Do not change code yet.",
+    "expected_skill": "secure-mcp-server",
+    "quality_checks": [
+      "trust boundaries identified",
+      "authn vs authz distinguished",
+      "no edits first",
+      "prioritized findings"
+    ]
+  },
+  {
+    "id": "security-hardening",
+    "prompt": "Harden this MCP server based on the security findings and add regression tests.",
+    "expected_skill": "secure-mcp-server",
+    "quality_checks": [
+      "smallest safe fixes",
+      "regression tests",
+      "least privilege",
+      "does not remove controls to make tests pass"
+    ]
+  },
+  {
+    "id": "test-existing-server",
+    "prompt": "Create a proper automated test suite for this MCP server and run it if possible.",
+    "expected_skill": "test-mcp-server",
+    "quality_checks": [
+      "behavior matrix",
+      "negative paths",
+      "protocol or capability tests",
+      "does not claim pass without execution"
+    ]
+  },
+  {
+    "id": "reproduce-auth-failure",
+    "prompt": "This MCP tool returns unauthorized only in some cases. Add tests that reproduce the issue before fixing it.",
+    "expected_skill": "test-mcp-server",
+    "quality_checks": [
+      "reproduction first",
+      "authorization failure covered",
+      "no premature fix"
+    ]
+  },
+  {
+    "id": "get-endpoint-ambiguity",
+    "prompt": "Expose this GET /customers/{id} endpoint through MCP.",
+    "expected_skill": "create-mcp-tool",
+    "quality_checks": [
+      "considers resource vs tool",
+      "does not blindly mirror endpoint",
+      "minimal contract"
+    ]
+  },
+  {
+    "id": "api-analysis-only",
+    "prompt": "Reverse engineer this API and tell me what MCP surface you would recommend. Do not implement anything.",
+    "expected_skill": "reverse-engineer-api",
+    "quality_checks": [
+      "no implementation",
+      "evidence vs inference",
+      "capability map"
+    ]
+  },
+  {
+    "id": "review-then-fix-conflict",
+    "prompt": "This MCP server has 35 tools. First review why that is a problem, then reduce the surface and implement the improved design.",
+    "expected_skills": [
+      "review-mcp-server",
+      "create-mcp-tool"
+    ],
+    "quality_checks": [
+      "review precedes edits",
+      "capability grouping",
+      "behavior preserved",
+      "tests updated"
+    ]
+  },
+  {
+    "id": "new-greenfield-server",
+    "prompt": "Create a new MCP server for our helpdesk system with ticket search, ticket details and adding comments.",
+    "expected_skill": "create-mcp-server",
+    "quality_checks": [
+      "capability map",
+      "read vs write classification",
+      "language choice justified",
+      "usable implementation"
+    ]
+  },
+  {
+    "id": "tool-schema-redesign",
+    "prompt": "The input schema for customer.search has 18 optional fields and agents use it badly. Redesign that tool.",
+    "expected_skill": "create-mcp-tool",
+    "quality_checks": [
+      "agent usability considered",
+      "schema simplified",
+      "backward compatibility considered"
+    ]
+  },
+  {
+    "id": "security-vs-general-review",
+    "prompt": "Review this MCP implementation specifically for prompt injection, unsafe URLs, secret leakage and tenant isolation.",
+    "expected_skill": "secure-mcp-server",
+    "quality_checks": [
+      "security-specific routing",
+      "untrusted data model",
+      "tenant boundary review",
+      "URL/SSRF risk considered"
+    ]
+  },
+  {
+    "id": "test-vs-review",
+    "prompt": "Don't review the architecture. I only want tests for the current behavior, including timeouts, malformed responses and authorization failures.",
+    "expected_skill": "test-mcp-server",
+    "quality_checks": [
+      "respects scope",
+      "timeout test",
+      "malformed response test",
+      "authorization negative path"
+    ]
   }
 ]

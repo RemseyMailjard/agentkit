@@ -1,35 +1,33 @@
-# Architecture
+# AgentKit Architecture
 
-## Marketplace
+## Layers
 
-The repository root contains `.agents/plugins/marketplace.json`, which lists the
-plugins Codex can discover from this marketplace.
+```text
+Marketplace
+  -> Plugin
+     -> Skill / Workflow
+        -> Micro-capability
+```
 
-## Plugin layer
+MCP-backed plugins may additionally invoke a remote MCP capability layer.
 
-`plugins/mcp-builder` is the first Skills4-IT plugin. It packages reusable workflows
-for MCP architecture and implementation.
+## MCP Builder v0.2
 
-## Skill layer
+```text
+MCP Builder
+├── create-mcp-server
+├── create-mcp-tool
+├── review-mcp-server
+├── reverse-engineer-api
+├── secure-mcp-server
+└── test-mcp-server
+```
 
-v0.1 contains four skills:
+The skills intentionally overlap only where a real workflow crosses boundaries.
+Routing evaluations should make those boundaries observable.
 
-- `create-mcp-server` — end-to-end MCP server design and implementation;
-- `create-mcp-tool` — focused addition or redesign of one MCP capability;
-- `review-mcp-server` — architecture, quality and security review before remediation;
-- `reverse-engineer-api` — API/integration analysis into an MCP capability model.
+## Planned platform areas
 
-## Evaluation layer
-
-`evals/mcp-builder/cases.json` provides initial routing and quality scenarios. The
-next step is to integrate these cases with a repeatable Codex/plugin evaluation run.
-
-## Planned plugins
-
-- dotnet-reviewer
-- lab-generator
-- notebuddy
-- training-creator
-- azure
-- power-platform
-- m365-copilot
+- Build: MCP Builder, .NET Reviewer, Azure, Power Platform
+- Learn: Training Creator, Lab Generator
+- Know: NoteBuddy and organization knowledge
