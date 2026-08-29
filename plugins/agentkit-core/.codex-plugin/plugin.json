@@ -1,7 +1,7 @@
 {
   "name": "agentkit-core",
-  "version": "0.1.0",
-  "description": "Reusable AgentKit core workflows built from small composable micro-capabilities for quality, action extraction and completion checks.",
+  "version": "0.3.0",
+  "description": "Personalized AgentKit core workflows for quality, action, decisions, requirements, testing, change planning and evidence-driven completion.",
   "author": {
     "name": "Skills4-IT"
   },
@@ -12,15 +12,16 @@
     "agentkit",
     "quality",
     "productivity",
-    "workflow",
-    "micro-tools",
-    "review"
+    "requirements",
+    "testing",
+    "decision-support",
+    "micro-tools"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "AgentKit Core",
-    "shortDescription": "Reusable quality and productivity workflows",
-    "longDescription": "Compact AgentKit workflows composed from reusable micro-capabilities for final checks, next actions and definition-of-done validation.",
+    "shortDescription": "Personalized quality and execution workflows",
+    "longDescription": "Composable Skills4-IT workflows for action, decisions, requirements, testing, change planning, evidence and completion.",
     "developerName": "Skills4-IT",
     "category": "Productivity",
     "capabilities": [
@@ -31,9 +32,9 @@
     "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Run a final quality check on this message before I send it.",
-      "Find the next concrete action in this information.",
-      "Check whether this work actually meets its definition of done."
+      "Analyze these requirements and make them implementation-ready.",
+      "Compare these options and recommend the best practical direction.",
+      "Plan this change including impact, rollback and verification."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

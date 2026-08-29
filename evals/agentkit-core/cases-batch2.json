@@ -1,0 +1,84 @@
+{
+  "plugin": "agentkit-core",
+  "version": 2,
+  "cases": [
+    {
+      "id": "decision-from-meeting",
+      "input": "From these meeting notes, identify what was actually decided and what is still only assumed.",
+      "expected_skills": [
+        "analyze-decision"
+      ]
+    },
+    {
+      "id": "contradicting-requirements",
+      "input": "These two requirements seem inconsistent. Show me the contradiction and which decision is needed.",
+      "expected_skills": [
+        "analyze-decision"
+      ]
+    },
+    {
+      "id": "prioritize-backlog",
+      "input": "Put these ten work items into Now, Next and Later and account for dependencies.",
+      "expected_skills": [
+        "prioritize-work"
+      ]
+    },
+    {
+      "id": "blocked-priority",
+      "input": "What should I do first? Some items depend on customer approval and others unblock the team.",
+      "expected_skills": [
+        "prioritize-work"
+      ]
+    },
+    {
+      "id": "verify-report-claims",
+      "input": "Check which claims in this report are actually supported by the evidence provided.",
+      "expected_skills": [
+        "validate-claims"
+      ]
+    },
+    {
+      "id": "do-not-invent-evidence",
+      "input": "Validate these claims only against the material I provided. Do not browse.",
+      "expected_skills": [
+        "validate-claims"
+      ]
+    },
+    {
+      "id": "project-handoff",
+      "input": "Turn this project history into a concise handoff so another AI can continue the work.",
+      "expected_skills": [
+        "prepare-handoff"
+      ]
+    },
+    {
+      "id": "handoff-next-action",
+      "input": "Prepare a handoff including decisions, blockers, dependencies and the exact next action.",
+      "expected_skills": [
+        "prepare-handoff"
+      ]
+    },
+    {
+      "id": "boundary-training-priority",
+      "input": "Design a training agenda for beginners.",
+      "expected_plugins": [
+        "training-creator"
+      ],
+      "excluded_skills": [
+        "prioritize-work",
+        "analyze-decision"
+      ]
+    },
+    {
+      "id": "boundary-dotnet-evidence",
+      "input": "Review this .NET repository for security issues.",
+      "expected_plugins": [
+        "dotnet-reviewer"
+      ],
+      "excluded_skills": [
+        "validate-claims",
+        "prepare-handoff"
+      ]
+    }
+  ]
+}

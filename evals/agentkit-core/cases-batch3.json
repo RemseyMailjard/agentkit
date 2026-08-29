@@ -1,0 +1,85 @@
+{
+  "plugin": "agentkit-core",
+  "version": 3,
+  "cases": [
+    {
+      "id": "requirements-client-brief",
+      "input": "Turn this client request into clear functional and non-functional requirements, acceptance criteria and risks.",
+      "expected_skills": [
+        "analyze-requirements"
+      ]
+    },
+    {
+      "id": "requirements-access-constraints",
+      "input": "Analyze this requirement and include identity, permissions, environment constraints and testability.",
+      "expected_skills": [
+        "analyze-requirements"
+      ]
+    },
+    {
+      "id": "test-strategy-from-requirements",
+      "input": "Generate a practical test strategy from these requirements including boundaries, auth and failure paths.",
+      "expected_skills": [
+        "generate-test-strategy"
+      ]
+    },
+    {
+      "id": "test-evidence-boundary",
+      "input": "The tests exist but nobody ran them. What evidence is still needed before we call this verified?",
+      "expected_skills": [
+        "generate-test-strategy"
+      ]
+    },
+    {
+      "id": "compare-microsoft-options",
+      "input": "Compare these implementation options on enterprise fit, maintainability, security, Microsoft-stack fit and cost, then recommend one.",
+      "expected_skills": [
+        "compare-options"
+      ]
+    },
+    {
+      "id": "compare-no-generic-pros-cons",
+      "input": "I do not want a generic pros/cons list. Compare these options and tell me what I should choose.",
+      "expected_skills": [
+        "compare-options"
+      ]
+    },
+    {
+      "id": "plan-change-safe",
+      "input": "Plan this production change including blast radius, dependencies, rollback and verification.",
+      "expected_skills": [
+        "plan-change"
+      ]
+    },
+    {
+      "id": "plan-change-workaround-vs-structural",
+      "input": "Give me both the quick workaround and the structural fix, including how we verify each safely.",
+      "expected_skills": [
+        "plan-change"
+      ]
+    },
+    {
+      "id": "boundary-dotnet-review",
+      "input": "Review this .NET repository for general code quality.",
+      "expected_plugins": [
+        "dotnet-reviewer"
+      ],
+      "excluded_skills": [
+        "analyze-requirements",
+        "compare-options",
+        "plan-change"
+      ]
+    },
+    {
+      "id": "boundary-training-design",
+      "input": "Create a hands-on training for Microsoft Copilot Studio.",
+      "expected_plugins": [
+        "training-creator"
+      ],
+      "excluded_skills": [
+        "analyze-requirements",
+        "generate-test-strategy"
+      ]
+    }
+  ]
+}
