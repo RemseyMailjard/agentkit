@@ -1,0 +1,235 @@
+[
+  {
+    "id": "vague-client-request",
+    "prompt": "A client says: 'We want a one-day AI agents training for our people.' Analyze the training need before designing anything.",
+    "expected_skill": "analyze-training-need",
+    "quality_checks": [
+      "does not jump to agenda",
+      "target behavior",
+      "audience assumptions",
+      "constraints",
+      "open decisions"
+    ]
+  },
+  {
+    "id": "end-user-audience",
+    "prompt": "Analyze the audience for a Microsoft 365 Copilot adoption session for non-technical end users.",
+    "expected_skill": "analyze-audience",
+    "quality_checks": [
+      "end-user framing",
+      "practical scenarios",
+      "low technical setup",
+      "confidence/productivity"
+    ]
+  },
+  {
+    "id": "developer-audience",
+    "prompt": "Analyze the audience for an MCP training for experienced .NET and Java developers.",
+    "expected_skill": "analyze-audience",
+    "quality_checks": [
+      "technical depth",
+      "hands-on expectation",
+      "architecture/troubleshooting",
+      "differentiation"
+    ]
+  },
+  {
+    "id": "learning-objectives",
+    "prompt": "Create measurable learning objectives for a one-day MCP training where developers must use existing MCP servers and build a small server themselves.",
+    "expected_skill": "define-learning-objectives",
+    "quality_checks": [
+      "observable verbs",
+      "apply/create progression",
+      "lab mapping",
+      "assessment mapping"
+    ]
+  },
+  {
+    "id": "full-training-design",
+    "prompt": "Design a one-day practical training on MCP for AI assistants for developers. Make it hands-on heavy and include demos, labs, challenges and fallback options.",
+    "expected_skill": "design-training",
+    "quality_checks": [
+      "timed agenda",
+      "hands-on heavy",
+      "simple-to-deep progression",
+      "fallback plan",
+      "environment checklist"
+    ]
+  },
+  {
+    "id": "assessment-technical",
+    "prompt": "Create assessment moments for a technical training on Azure Functions and managed identity.",
+    "expected_skill": "create-assessment",
+    "quality_checks": [
+      "objective alignment",
+      "scenario questions",
+      "hands-on validation",
+      "rubric"
+    ]
+  },
+  {
+    "id": "instructor-brief",
+    "prompt": "Prepare a concise instructor brief for this upcoming client training from the available context. Focus on audience, case flow, labs, demos, prerequisites, blockers and decisions.",
+    "expected_skill": "create-instructor-brief",
+    "quality_checks": [
+      "delivery focus",
+      "blockers",
+      "fallbacks",
+      "open decisions",
+      "skimmable"
+    ]
+  },
+  {
+    "id": "readiness-check",
+    "prompt": "Review whether this training is ready to deliver tomorrow. Pay special attention to accounts, licenses, permissions, labs and fallback demos.",
+    "expected_skill": "review-training-readiness",
+    "quality_checks": [
+      "READY model",
+      "critical dependencies",
+      "fallbacks",
+      "no false ready status"
+    ]
+  },
+  {
+    "id": "adapt-half-day",
+    "prompt": "Adapt this full-day technical training to a 3-hour version without losing the core learning outcome.",
+    "expected_skill": "adapt-training",
+    "quality_checks": [
+      "objective preserved",
+      "scope reduced",
+      "agenda revised",
+      "tradeoffs explicit"
+    ]
+  },
+  {
+    "id": "adapt-online",
+    "prompt": "Adapt this classroom Power Platform training for online delivery with participants working individually.",
+    "expected_skill": "adapt-training",
+    "quality_checks": [
+      "online constraints",
+      "support model",
+      "lab adaptation",
+      "timing"
+    ]
+  },
+  {
+    "id": "cross-plugin-mcp-course",
+    "prompt": "Create a one-day MCP training for .NET developers, including one lab where they build an MCP server and one security review exercise.",
+    "expected_skills": [
+      "design-training",
+      "create-mcp-server",
+      "secure-mcp-server",
+      "create-lab"
+    ],
+    "quality_checks": [
+      "training orchestration",
+      "technical correctness",
+      "hands-on lab",
+      "security exercise"
+    ]
+  },
+  {
+    "id": "cross-plugin-dotnet-lab",
+    "prompt": "Design a training module on common ASP.NET Core quality problems, then create a learner exercise based on realistic review findings.",
+    "expected_skills": [
+      "design-training",
+      "review-aspnet-api",
+      "create-lab"
+    ],
+    "quality_checks": [
+      "training module",
+      "real review findings",
+      "hands-on exercise",
+      "objective alignment"
+    ]
+  },
+  {
+    "id": "purview-style-readiness",
+    "prompt": "This data governance training depends on cloud accounts, SQL access and participant permissions. Review delivery readiness and propose fallback options for blocked access.",
+    "expected_skill": "review-training-readiness",
+    "quality_checks": [
+      "permissions",
+      "environment risk",
+      "fallback demo/exercise",
+      "status model"
+    ]
+  },
+  {
+    "id": "mixed-audience",
+    "prompt": "We have both functional consultants and developers in the same AI automation training. Analyze the audience and propose differentiation.",
+    "expected_skill": "analyze-audience",
+    "quality_checks": [
+      "mixed audience risk",
+      "shared core",
+      "optional depth",
+      "exercise differentiation"
+    ]
+  },
+  {
+    "id": "training-vs-lab-boundary",
+    "prompt": "Create only the 45-minute hands-on exercise for module 3. The overall training design already exists.",
+    "expected_skill": "create-lab",
+    "quality_checks": [
+      "routes to Lab Generator",
+      "does not redesign course",
+      "complete lab structure"
+    ]
+  },
+  {
+    "id": "brief-vs-design",
+    "prompt": "I don't need a new course. I need a one-page delivery brief for the trainer based on the existing training plan and client constraints.",
+    "expected_skill": "create-instructor-brief",
+    "quality_checks": [
+      "no redesign",
+      "concise brief",
+      "client constraints",
+      "decisions"
+    ]
+  },
+  {
+    "id": "objectives-vs-agenda",
+    "prompt": "Before making the agenda, define what participants must be able to do by the end of this Power Automate training.",
+    "expected_skill": "define-learning-objectives",
+    "quality_checks": [
+      "no premature agenda",
+      "observable outcomes",
+      "work relevance"
+    ]
+  },
+  {
+    "id": "restricted-environment",
+    "prompt": "Design a technical training where participants cannot create Azure resources themselves. Include a practical fallback strategy.",
+    "expected_skills": [
+      "design-training",
+      "adapt-training"
+    ],
+    "quality_checks": [
+      "restricted access acknowledged",
+      "fallback labs",
+      "learning outcomes preserved",
+      "trainer demo option"
+    ]
+  },
+  {
+    "id": "assessment-end-user",
+    "prompt": "Create a lightweight assessment for an end-user Copilot session that checks practical workplace use, not technical trivia.",
+    "expected_skill": "create-assessment",
+    "quality_checks": [
+      "practical",
+      "confidence-oriented",
+      "no technical trivia",
+      "workplace scenarios"
+    ]
+  },
+  {
+    "id": "readiness-not-content-review",
+    "prompt": "The course content is already approved. I only want to know whether we can successfully deliver it with the current accounts, tenant, laptops and network restrictions.",
+    "expected_skill": "review-training-readiness",
+    "quality_checks": [
+      "operational focus",
+      "no course redesign",
+      "access risks",
+      "clear status"
+    ]
+  }
+]

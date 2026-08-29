@@ -1,0 +1,44 @@
+{
+  "name": "training-creator",
+  "version": "0.1.0",
+  "description": "Design practical, audience-aware IT training programs using the Skills4-IT training methodology, including needs analysis, learning objectives, course flow, assessments, instructor briefs and delivery-readiness checks.",
+  "author": {
+    "name": "Skills4-IT"
+  },
+  "homepage": "https://github.com/RemseyMailjard/agentkit",
+  "repository": "https://github.com/RemseyMailjard/agentkit",
+  "license": "MIT",
+  "keywords": [
+    "training",
+    "instructional-design",
+    "it-training",
+    "microsoft",
+    "hands-on",
+    "learning-design",
+    "instructor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Training Creator",
+    "shortDescription": "Design practical IT training from need to delivery",
+    "longDescription": "Skills4-IT workflows for training-needs analysis, audience differentiation, measurable learning objectives, practical course design, assessments, instructor briefing, delivery readiness and adaptation.",
+    "developerName": "Skills4-IT",
+    "category": "Education",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://skills4-it.nl/",
+    "defaultPrompt": [
+      "Design a one-day technical training for this audience.",
+      "Analyze this client training request before building the course.",
+      "Create measurable learning objectives for this training.",
+      "Prepare the instructor brief for this client training.",
+      "Review whether this training is ready to deliver.",
+      "Adapt this training for a less technical audience."
+    ],
+    "brandColor": "#512BD4",
+    "screenshots": []
+  }
+}

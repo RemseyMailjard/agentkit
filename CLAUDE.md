@@ -34,12 +34,23 @@ Marketplace (.agents/plugins/marketplace.json)
 - `docs/architecture.md` is the canonical architecture doc — keep it and this file in
   sync when the layering changes.
 
-### Current plugin: MCP Builder (v0.2, flagship)
+### Plugins
 
-Six focused skills under `plugins/mcp-builder/skills/`:
-`create-mcp-server`, `create-mcp-tool`, `review-mcp-server`, `reverse-engineer-api`,
-`secure-mcp-server`, `test-mcp-server`. Skills intentionally overlap only where a real
-workflow crosses boundaries — routing evals should make those boundaries observable.
+**MCP Builder** (`plugins/mcp-builder/`, v0.2, flagship) — Developer Tools. Six focused
+skills under `plugins/mcp-builder/skills/`: `create-mcp-server`, `create-mcp-tool`,
+`review-mcp-server`, `reverse-engineer-api`, `secure-mcp-server`, `test-mcp-server`.
+Skills intentionally overlap only where a real workflow crosses boundaries — routing
+evals should make those boundaries observable.
+
+**.NET Reviewer** (`plugins/dotnet-reviewer/`, v0.1) — Developer Tools. Review and
+remediation workflows for .NET repositories under `plugins/dotnet-reviewer/skills/`:
+`review-dotnet`, `review-aspnet-api`, `review-ef-core`, `review-security`,
+`fix-findings`. Follows the same review-before-remediation split as MCP Builder —
+`fix-findings` is a separate, explicit workflow from the review skills.
+
+**Lab Generator** (`plugins/lab-generator/`, v0.1) — Education. Instructional-design
+workflows for hands-on IT labs under `plugins/lab-generator/skills/`: `create-lab`,
+`create-challenge`, `review-lab`, `test-lab`, `adapt-lab`.
 
 ## Design principles (apply to any new skill/plugin)
 
@@ -65,7 +76,7 @@ workflow crosses boundaries — routing evals should make those boundaries obser
 - Do not claim commands/tests were executed unless execution evidence exists.
 - Keep plugin manifests (`plugin.json`, `marketplace.json`) and repository URLs current.
 
-### Quality bar for every MCP Builder skill
+### Quality bar for every skill, in any plugin
 
 Each `SKILL.md` must define:
 
@@ -74,4 +85,4 @@ Each `SKILL.md` must define:
 3. A repeatable workflow.
 4. Safety or side-effect considerations.
 5. A concrete output contract.
-6. At least one corresponding eval case in `evals/mcp-builder/cases.json`.
+6. At least one corresponding eval case in `evals/<plugin-name>/cases.json`.
