@@ -1,7 +1,7 @@
 {
   "name": "agentkit-core",
-  "version": "1.2.0",
-  "description": "Personalized Skills4-IT core workflows spanning knowledge, Microsoft cloud architecture, engineering, AI agents, consulting, training and execution.",
+  "version": "2.4.0",
+  "description": "Deeply personalized Skills4-IT workflows spanning .NET, Power Platform, MCP/agents, training business, consulting delivery and knowledge/relationship context.",
   "author": {
     "name": "Skills4-IT"
   },
@@ -10,18 +10,18 @@
   "license": "MIT",
   "keywords": [
     "agentkit",
-    "microsoft-365",
+    ".net",
     "power-platform",
-    "azure",
+    "mcp",
     "training",
-    "knowledge",
-    "micro-tools"
+    "consulting",
+    "knowledge"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "AgentKit Core",
-    "shortDescription": "Personalized Microsoft and AI execution workflows",
-    "longDescription": "Composable Skills4-IT workflows for Microsoft cloud solutions, knowledge quality, training production, engineering, AI agents and consulting.",
+    "shortDescription": "Personalized delivery and engineering workflows",
+    "longDescription": "Composable Skills4-IT workflows for .NET, Power Platform, MCP/agent engineering, training business, consulting delivery and durable context.",
     "developerName": "Skills4-IT",
     "category": "Productivity",
     "capabilities": [
@@ -32,9 +32,9 @@
     "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Build the smallest relevant context and identify what knowledge is trustworthy.",
-      "Design this Microsoft 365, Power Platform or Azure solution from the business capability.",
-      "Turn this learning objective into a practical training module or delivery plan."
+      "Review or design this .NET, Power Platform or MCP implementation.",
+      "Prepare this training or consulting delivery for success and closure.",
+      "Build or audit durable knowledge and relationship context."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

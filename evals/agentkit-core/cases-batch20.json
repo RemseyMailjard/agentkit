@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 20,
+  "cases": [
+    {
+      "id": "pps",
+      "input": "Review this Power Platform solution for ALM, connections and ownership.",
+      "expected_skills": [
+        "review-power-platform-solution"
+      ]
+    },
+    {
+      "id": "flow",
+      "input": "Review this Power Automate flow for production reliability.",
+      "expected_skills": [
+        "review-power-automate-flow"
+      ]
+    },
+    {
+      "id": "app",
+      "input": "Review this Power App for delegation, UX and supportability.",
+      "expected_skills": [
+        "review-power-app"
+      ]
+    },
+    {
+      "id": "release",
+      "input": "Prepare this Power Platform solution for safe release to production.",
+      "expected_skills": [
+        "prepare-power-platform-release"
+      ]
+    }
+  ]
+}

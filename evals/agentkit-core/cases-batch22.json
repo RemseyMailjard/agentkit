@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 22,
+  "cases": [
+    {
+      "id": "qual",
+      "input": "Qualify this new training request for fit, prep and prerequisites.",
+      "expected_skills": [
+        "qualify-training-request"
+      ]
+    },
+    {
+      "id": "prep",
+      "input": "Prepare this upcoming client training including logistics, access and fallback.",
+      "expected_skills": [
+        "prepare-training-delivery"
+      ]
+    },
+    {
+      "id": "retro",
+      "input": "Review this completed training delivery and extract improvements.",
+      "expected_skills": [
+        "review-training-delivery"
+      ]
+    },
+    {
+      "id": "expand",
+      "input": "Find useful follow-on opportunities after this training.",
+      "expected_skills": [
+        "identify-training-expansion"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 18,
+  "cases": [
+    {
+      "id": "strategy",
+      "input": "Run a strategic review of my recent projects and tell me what to stop, continue and invest in.",
+      "expected_skills": [
+        "run-strategic-review"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "input": "Review these client, product and learning initiatives as one portfolio and tell me what to pause.",
+      "expected_skills": [
+        "review-initiative-portfolio"
+      ]
+    },
+    {
+      "id": "quarter",
+      "input": "Reduce these goals to one or two quarterly themes and a focused initiative set.",
+      "expected_skills": [
+        "design-quarter-focus"
+      ]
+    },
+    {
+      "id": "decision-review",
+      "input": "Review this past decision for evidence, assumptions, trade-offs and reusable lessons.",
+      "expected_skills": [
+        "review-decision-quality"
+      ]
+    }
+  ]
+}

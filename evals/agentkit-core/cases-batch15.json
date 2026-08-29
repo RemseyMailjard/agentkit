@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 15,
+  "cases": [
+    {
+      "id": "ai-opportunity",
+      "input": "Should this workflow become an AI agent product or is deterministic automation better?",
+      "expected_skills": [
+        "assess-ai-product-opportunity"
+      ]
+    },
+    {
+      "id": "agent-product",
+      "input": "Design this agent as a product with user journey, trust, metrics and feedback loop.",
+      "expected_skills": [
+        "design-agent-product"
+      ]
+    },
+    {
+      "id": "agent-roadmap",
+      "input": "Prioritize this agent roadmap from prototype to pilot to production.",
+      "expected_skills": [
+        "prioritize-agent-roadmap"
+      ]
+    },
+    {
+      "id": "economics",
+      "input": "Assess whether this agent's latency and token/tool cost are justified by the value.",
+      "expected_skills": [
+        "optimize-agent-economics"
+      ]
+    }
+  ]
+}

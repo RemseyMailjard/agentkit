@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 23,
+  "cases": [
+    {
+      "id": "scope",
+      "input": "Manage scope, assumptions and risks for this consulting engagement.",
+      "expected_skills": [
+        "manage-consulting-scope"
+      ]
+    },
+    {
+      "id": "status",
+      "input": "Prepare a concise client status from these project notes.",
+      "expected_skills": [
+        "prepare-client-status"
+      ]
+    },
+    {
+      "id": "handoff",
+      "input": "Prepare this solution for client handoff and capability transfer.",
+      "expected_skills": [
+        "prepare-client-handoff"
+      ]
+    },
+    {
+      "id": "close",
+      "input": "Close this consulting engagement including acceptance, value evidence and reusable IP.",
+      "expected_skills": [
+        "close-consulting-engagement"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 19,
+  "cases": [
+    {
+      "id": "dotnet",
+      "input": "Review this .NET implementation for async, DI, logging and exception-flow issues.",
+      "expected_skills": [
+        "review-dotnet-implementation"
+      ]
+    },
+    {
+      "id": "api",
+      "input": "Review these ASP.NET Core endpoints for validation and error behavior.",
+      "expected_skills": [
+        "review-aspnet-endpoints"
+      ]
+    },
+    {
+      "id": "ef",
+      "input": "Review this EF Core data access layer for query and lifetime issues.",
+      "expected_skills": [
+        "review-ef-data-access"
+      ]
+    },
+    {
+      "id": "design",
+      "input": "Design a maintainable .NET service with clear boundaries and testability.",
+      "expected_skills": [
+        "design-dotnet-service"
+      ]
+    }
+  ]
+}

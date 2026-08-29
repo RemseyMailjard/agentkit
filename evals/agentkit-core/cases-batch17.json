@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 17,
+  "cases": [
+    {
+      "id": "radar",
+      "input": "Prioritize these Microsoft and AI updates into what I should learn now, watch or ignore.",
+      "expected_skills": [
+        "prioritize-learning-radar"
+      ]
+    },
+    {
+      "id": "sprint",
+      "input": "Design a short hands-on learning sprint for this Azure/AI topic.",
+      "expected_skills": [
+        "design-learning-sprint"
+      ]
+    },
+    {
+      "id": "training-update",
+      "input": "Map these new platform changes to the training content I need to update.",
+      "expected_skills": [
+        "update-training-from-radar"
+      ]
+    },
+    {
+      "id": "compound",
+      "input": "Turn what I just learned into reusable training, consulting and product assets.",
+      "expected_skills": [
+        "compound-learning"
+      ]
+    }
+  ]
+}

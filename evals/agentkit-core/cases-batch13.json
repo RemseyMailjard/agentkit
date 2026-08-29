@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 13,
+  "cases": [
+    {
+      "id": "qualify",
+      "input": "Qualify this new client lead for fit, commercial risk and next action.",
+      "expected_skills": [
+        "qualify-opportunity"
+      ]
+    },
+    {
+      "id": "proposal-strategy",
+      "input": "Prepare the proposal strategy before I write the offer.",
+      "expected_skills": [
+        "prepare-proposal-strategy"
+      ]
+    },
+    {
+      "id": "grow-account",
+      "input": "Review this client history for natural follow-on opportunities and relationship actions.",
+      "expected_skills": [
+        "grow-client-account"
+      ]
+    },
+    {
+      "id": "pipeline",
+      "input": "Prioritize these leads into active, nurture and drop, with one next action each.",
+      "expected_skills": [
+        "manage-commercial-pipeline"
+      ]
+    }
+  ]
+}

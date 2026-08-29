@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 14,
+  "cases": [
+    {
+      "id": "api",
+      "input": "Design this API integration including auth, contracts, resilience and data boundaries.",
+      "expected_skills": [
+        "design-api-integration"
+      ]
+    },
+    {
+      "id": "review-api",
+      "input": "Review this API architecture for service boundaries, dependency and operational risk.",
+      "expected_skills": [
+        "review-api-architecture"
+      ]
+    },
+    {
+      "id": "event",
+      "input": "Design this workflow as an event-driven architecture with retries and idempotency.",
+      "expected_skills": [
+        "design-event-driven-flow"
+      ]
+    },
+    {
+      "id": "adr",
+      "input": "Capture this technical decision as a concise architecture decision record.",
+      "expected_skills": [
+        "record-architecture-decision"
+      ]
+    }
+  ]
+}

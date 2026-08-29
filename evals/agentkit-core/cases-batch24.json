@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 24,
+  "cases": [
+    {
+      "id": "person",
+      "input": "Build a respectful durable context summary from these conversations about this person.",
+      "expected_skills": [
+        "build-person-context"
+      ]
+    },
+    {
+      "id": "follow",
+      "input": "Prepare the next useful follow-up with this person from our shared context.",
+      "expected_skills": [
+        "prepare-person-followup"
+      ]
+    },
+    {
+      "id": "audit",
+      "input": "Audit this stored person context for duplication, unsupported inference and sensitivity.",
+      "expected_skills": [
+        "audit-person-memory"
+      ]
+    },
+    {
+      "id": "summary",
+      "input": "Summarize this relationship context from the provided messages.",
+      "expected_skills": [
+        "summarize-relationship-context"
+      ]
+    }
+  ]
+}

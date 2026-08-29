@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 16,
+  "cases": [
+    {
+      "id": "triage",
+      "input": "Triage this mixed inbox of ideas, tasks, notes and commitments into the right destinations.",
+      "expected_skills": [
+        "triage-personal-inbox"
+      ]
+    },
+    {
+      "id": "daily",
+      "input": "Choose the one thing I should finish today and what I should defer.",
+      "expected_skills": [
+        "choose-daily-focus"
+      ]
+    },
+    {
+      "id": "rebalance",
+      "input": "My work and personal commitments are overloaded. Help me rebalance practically.",
+      "expected_skills": [
+        "rebalance-personal-load"
+      ]
+    },
+    {
+      "id": "routine",
+      "input": "This recurring admin routine wastes time every week. Simplify or automate it.",
+      "expected_skills": [
+        "systemize-personal-routine"
+      ]
+    }
+  ]
+}

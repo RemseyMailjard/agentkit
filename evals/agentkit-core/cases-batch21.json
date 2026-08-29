@@ -1,0 +1,34 @@
+{
+  "plugin": "agentkit-core",
+  "version": 21,
+  "cases": [
+    {
+      "id": "cap",
+      "input": "Design MCP capabilities from this backend without mirroring endpoints blindly.",
+      "expected_skills": [
+        "design-mcp-capabilities"
+      ]
+    },
+    {
+      "id": "contracts",
+      "input": "Review these MCP tools for schema, errors, auth and agent usability.",
+      "expected_skills": [
+        "review-mcp-contracts"
+      ]
+    },
+    {
+      "id": "tests",
+      "input": "Build an MCP test plan across protocol, auth and failure paths.",
+      "expected_skills": [
+        "build-mcp-test-plan"
+      ]
+    },
+    {
+      "id": "ready",
+      "input": "Assess whether this MCP server is ready for pilot or production.",
+      "expected_skills": [
+        "assess-mcp-release-readiness"
+      ]
+    }
+  ]
+}
