@@ -1,0 +1,62 @@
+name: MCP Builder Plugin Eval
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "plugin-eval mode"
+        required: true
+        default: "analyze"
+        type: choice
+        options:
+          - analyze
+          - init-benchmark
+          - benchmark-dry-run
+
+permissions:
+  contents: read
+
+jobs:
+  plugin-eval:
+    name: MCP Builder official plugin-eval
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout AgentKit
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Checkout OpenAI plugins
+        uses: actions/checkout@v4
+        with:
+          repository: openai/plugins
+          path: .external/openai-plugins
+
+      - name: Select plugin-eval mode
+        env:
+          OPENAI_PLUGINS_DIR: ${{ github.workspace }}/.external/openai-plugins
+        run: |
+          case "${{ inputs.mode }}" in
+            analyze)
+              python scripts/run_plugin_eval_mcp_builder.py analyze
+              ;;
+            init-benchmark)
+              python scripts/run_plugin_eval_mcp_builder.py init-benchmark
+              ;;
+            benchmark-dry-run)
+              python scripts/run_plugin_eval_mcp_builder.py benchmark --dry-run
+              ;;
+            *)
+              echo "Unsupported mode"
+              exit 2
+              ;;
+          esac

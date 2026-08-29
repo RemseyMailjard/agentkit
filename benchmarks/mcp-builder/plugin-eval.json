@@ -1,0 +1,18 @@
+{
+  "target": "plugins/mcp-builder",
+  "official_tool": "openai/plugins plugin-eval",
+  "phase": "exploratory",
+  "commands": {
+    "analyze": "python scripts/run_plugin_eval_mcp_builder.py analyze",
+    "init_benchmark": "python scripts/run_plugin_eval_mcp_builder.py init-benchmark",
+    "benchmark_dry_run": "python scripts/run_plugin_eval_mcp_builder.py benchmark --dry-run",
+    "benchmark_live": "python scripts/run_plugin_eval_mcp_builder.py benchmark"
+  },
+  "release_gate": false,
+  "notes": [
+    "plugin-eval requires Node.js >=20",
+    "the package is private and expected to run from a local checkout/link",
+    "live benchmark runs real codex exec sessions in isolated temporary workspaces",
+    "review generated benchmark config before live execution"
+  ]
+}
