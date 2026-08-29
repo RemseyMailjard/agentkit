@@ -5,3 +5,5 @@ Estimate the risk of a proposed technical fix.
 blast radius, compatibility, data impact, security, rollback, test coverage, operational timing.
 ## Output
 risk level; key risks; mitigations; safest rollout path.
+## Boundary
+Do not perform broader analysis, rewriting, or decisions outside this responsibility; return findings for the parent Skill to act on.

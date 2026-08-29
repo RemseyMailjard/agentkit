@@ -5,4 +5,4 @@ description: >
 ---
 # Plan Content Campaign
 Compose:
-content-angle-generator → content-repurpose-mapper → audience-pain-mapper → content-business-linker → priority-scorer.
+content-angle-generator → content-repurpose-mapper → audience-pain-mapper → content-business-linker → cta-quality-checker → priority-scorer.

@@ -1,89 +1,1013 @@
-{
-  "plugin": "agentkit-core",
-  "version": 1,
-  "cases": [
-    {
-      "id": "pre-send-risk",
-      "input": "Check this email before I send it. Only flag important risks.",
-      "expected_skills": [
-        "final-message-check"
-      ]
-    },
-    {
-      "id": "commitment-mail",
-      "input": "Do a final mail check and tell me if I accidentally promise anything.",
-      "expected_skills": [
-        "final-message-check"
-      ]
-    },
-    {
-      "id": "next-action",
-      "input": "From these meeting notes, tell me the next concrete thing I should do.",
-      "expected_skills": [
-        "find-next-action"
-      ]
-    },
-    {
-      "id": "waiting",
-      "input": "I sent the proposal; now the customer must approve it. What next?",
-      "expected_skills": [
-        "find-next-action"
-      ]
-    },
-    {
-      "id": "dod-code",
-      "input": "The feature is implemented but tests were not run. Is this done?",
-      "expected_skills": [
-        "check-definition-of-done"
-      ]
-    },
-    {
-      "id": "dod-criteria",
-      "input": "Check this deliverable against the acceptance criteria and identify what is unverified.",
-      "expected_skills": [
-        "check-definition-of-done"
-      ]
-    },
-    {
-      "id": "boundary-dotnet",
-      "input": "Review this ASP.NET Core repository for security vulnerabilities.",
-      "expected_plugins": [
-        "dotnet-reviewer"
-      ],
-      "excluded_skills": [
-        "final-message-check",
-        "find-next-action",
-        "check-definition-of-done"
-      ]
-    },
-    {
-      "id": "boundary-training",
-      "input": "Design a one-day Power Platform training.",
-      "expected_plugins": [
-        "training-creator"
-      ],
-      "excluded_skills": [
-        "final-message-check",
-        "find-next-action",
-        "check-definition-of-done"
-      ]
-    },
-    {
-      "id": "message-action-not-review",
-      "input": "Tell me what action this email requires. Do not review the writing.",
-      "expected_skills": [
-        "find-next-action"
-      ],
-      "excluded_skills": [
-        "final-message-check"
-      ]
-    },
-    {
-      "id": "review-dod-no-fix",
-      "input": "Check whether this finished deliverable meets all stated criteria. Do not fix it.",
-      "expected_skills": [
-        "check-definition-of-done"
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "pre-send-risk",
+    "expected_skills": [
+      "final-message-check"
+    ],
+    "prompt": "Check this email before I send it. Only flag important risks."
+  },
+  {
+    "id": "commitment-mail",
+    "expected_skills": [
+      "final-message-check"
+    ],
+    "prompt": "Do a final mail check and tell me if I accidentally promise anything."
+  },
+  {
+    "id": "next-action",
+    "expected_skills": [
+      "find-next-action"
+    ],
+    "prompt": "From these meeting notes, tell me the next concrete thing I should do."
+  },
+  {
+    "id": "waiting",
+    "expected_skills": [
+      "find-next-action"
+    ],
+    "prompt": "I sent the proposal; now the customer must approve it. What next?"
+  },
+  {
+    "id": "dod-code",
+    "expected_skills": [
+      "check-definition-of-done"
+    ],
+    "prompt": "The feature is implemented but tests were not run. Is this done?"
+  },
+  {
+    "id": "dod-criteria",
+    "expected_skills": [
+      "check-definition-of-done"
+    ],
+    "prompt": "Check this deliverable against the acceptance criteria and identify what is unverified."
+  },
+  {
+    "id": "boundary-dotnet",
+    "expected_plugins": [
+      "dotnet-reviewer"
+    ],
+    "excluded_skills": [
+      "final-message-check",
+      "find-next-action",
+      "check-definition-of-done"
+    ],
+    "prompt": "Review this ASP.NET Core repository for security vulnerabilities."
+  },
+  {
+    "id": "boundary-training",
+    "expected_plugins": [
+      "training-creator"
+    ],
+    "excluded_skills": [
+      "final-message-check",
+      "find-next-action",
+      "check-definition-of-done"
+    ],
+    "prompt": "Design a one-day Power Platform training."
+  },
+  {
+    "id": "message-action-not-review",
+    "expected_skills": [
+      "find-next-action"
+    ],
+    "excluded_skills": [
+      "final-message-check"
+    ],
+    "prompt": "Tell me what action this email requires. Do not review the writing."
+  },
+  {
+    "id": "review-dod-no-fix",
+    "expected_skills": [
+      "check-definition-of-done"
+    ],
+    "prompt": "Check whether this finished deliverable meets all stated criteria. Do not fix it."
+  },
+  {
+    "id": "baseline-analyze-adoption",
+    "prompt": "A user wants to understand why a technology, AI tool or process may not be adopted and what interventions are likely to improve usage.",
+    "expected_skills": [
+      "analyze-adoption"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-analyze-decision",
+    "prompt": "A user wants to identify what was decided, what remains an assumption, and whether notes, messages or requirements contain conflicting statements.",
+    "expected_skills": [
+      "analyze-decision"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-analyze-incident",
+    "prompt": "An outage or production failure needs an evidence-based timeline, root cause, impact and preventive actions.",
+    "expected_skills": [
+      "analyze-incident"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-analyze-requirements",
+    "prompt": "A user provides a feature request, client request, brief or requirement set and wants it made implementation-ready and testable.",
+    "expected_skills": [
+      "analyze-requirements"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-agent-readiness",
+    "prompt": "An AI agent should be assessed for pilot or production readiness.",
+    "expected_skills": [
+      "assess-agent-readiness"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-agentkit-release",
+    "prompt": "AgentKit should be assessed for a versioned release across structure, routing, eval coverage and deprecations.",
+    "expected_skills": [
+      "assess-agentkit-release"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-ai-product-opportunity",
+    "prompt": "An AI/agent idea should be assessed for real product value, frequency, feasibility and safer non-AI alternatives.",
+    "expected_skills": [
+      "assess-ai-product-opportunity"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-automation-opportunity",
+    "prompt": "A business process should be assessed for Power Automate, agentic automation or another workflow automation approach.",
+    "expected_skills": [
+      "assess-automation-opportunity"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-automation-scale",
+    "prompt": "An automation's likely volume, cost and bottlenecks should be assessed before scaling.",
+    "expected_skills": [
+      "assess-automation-scale"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-mcp-release-readiness",
+    "prompt": "An MCP server should be assessed for pilot or production readiness.",
+    "expected_skills": [
+      "assess-mcp-release-readiness"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-product-opportunity",
+    "prompt": "Repeated consulting, training or delivery work may be turned into a reusable product, workshop, service or subscription.",
+    "expected_skills": [
+      "assess-product-opportunity"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-assess-training-readiness",
+    "prompt": "A training, workshop or hands-on session must be checked for real-world delivery readiness, including labs, access, tooling and fallback plans.",
+    "expected_skills": [
+      "assess-training-readiness"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-audit-agentkit-routing",
+    "prompt": "AgentKit Skill/plugin routing should be checked for ambiguous triggers and boundary regressions.",
+    "expected_skills": [
+      "audit-agentkit-routing"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-audit-knowledge-quality",
+    "prompt": "A knowledge base, memory set or project context should be reviewed for staleness, duplication, unsupported claims and weak provenance.",
+    "expected_skills": [
+      "audit-knowledge-quality"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-audit-person-memory",
+    "prompt": "Stored person context should be reviewed for relevance, duplication, sensitivity and unsupported inference.",
+    "expected_skills": [
+      "audit-person-memory"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-case-study",
+    "prompt": "Completed client work should become a credible case study without exaggeration.",
+    "expected_skills": [
+      "build-case-study"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-mcp-test-plan",
+    "prompt": "An MCP server needs a practical test matrix across protocol, backend, auth and failures.",
+    "expected_skills": [
+      "build-mcp-test-plan"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-operational-runbook",
+    "prompt": "A technical process needs an executable runbook with troubleshooting and escalation.",
+    "expected_skills": [
+      "build-operational-runbook"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-person-context",
+    "prompt": "Provided messages or notes should be turned into a respectful, durable person-context summary.",
+    "expected_skills": [
+      "build-person-context"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-task-context",
+    "prompt": "A task needs a compact relevant context package assembled from a larger body of knowledge or project history.",
+    "expected_skills": [
+      "build-task-context"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-build-training-module",
+    "prompt": "One part of a technical training should be designed from concept through explanation, example, demo, guided practice and challenge.",
+    "expected_skills": [
+      "build-training-module"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-choose-daily-focus",
+    "prompt": "The user wants to choose one meaningful outcome to finish today while protecting focus and energy.",
+    "expected_skills": [
+      "choose-daily-focus"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-close-consulting-engagement",
+    "prompt": "A consulting engagement should be closed with acceptance, value evidence, open items and reusable IP captured.",
+    "expected_skills": [
+      "close-consulting-engagement"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-close-work-item",
+    "prompt": "A user wants to determine whether a project, task, delivery or client item is truly ready to close.",
+    "expected_skills": [
+      "close-work-item"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-compare-options",
+    "prompt": "A user wants to compare technologies, architectures, vendors or implementation approaches and receive a concrete recommendation.",
+    "expected_skills": [
+      "compare-options"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-compound-learning",
+    "prompt": "New knowledge should be converted into reusable teaching, consulting or product assets rather than remain passive learning.",
+    "expected_skills": [
+      "compound-learning"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-compress-context",
+    "prompt": "A large conversation, project history or document set must be compressed without losing decisions, constraints, evidence and next actions.",
+    "expected_skills": [
+      "compress-context"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-conduct-decision-research",
+    "prompt": "Research should support a concrete technical, product or business decision rather than produce a generic information summary.",
+    "expected_skills": [
+      "conduct-decision-research"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-curate-knowledge",
+    "prompt": "Notes, research or project information should be cleaned, deduplicated and stored as durable reusable knowledge rather than raw history.",
+    "expected_skills": [
+      "curate-knowledge"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-define-analytics-question",
+    "prompt": "A vague reporting or analytics request should become a decision-oriented data question.",
+    "expected_skills": [
+      "define-analytics-question"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-agent-evals",
+    "prompt": "An agent, MCP workflow or AI automation needs practical evaluation cases for routing, tools, failures and safe behavior.",
+    "expected_skills": [
+      "design-agent-evals"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-agent-product",
+    "prompt": "An AI agent should be designed as a product with user journey, trust, metrics, feedback and governance built in.",
+    "expected_skills": [
+      "design-agent-product"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-api-integration",
+    "prompt": "An API-backed integration needs capability mapping, auth, contracts, resilience and deployment-aware architecture.",
+    "expected_skills": [
+      "design-api-integration"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-automation-fallback",
+    "prompt": "A critical automation needs safe manual recovery and reconciliation behavior.",
+    "expected_skills": [
+      "design-automation-fallback"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-automation-operations",
+    "prompt": "An automation needs monitoring, SLA, ownership and operational support design.",
+    "expected_skills": [
+      "design-automation-operations"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-azure-integration",
+    "prompt": "An integration or backend capability needs a minimal Azure architecture with identity, security, operations and rollback.",
+    "expected_skills": [
+      "design-azure-integration"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-dotnet-service",
+    "prompt": "A .NET service or API should be designed with clear boundaries, DI, configuration, observability and testability.",
+    "expected_skills": [
+      "design-dotnet-service"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-enterprise-rollout",
+    "prompt": "A user wants a practical rollout plan for a new AI, Microsoft or digital capability in an enterprise environment.",
+    "expected_skills": [
+      "design-enterprise-rollout"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-event-driven-flow",
+    "prompt": "A workflow may benefit from events, queues, asynchronous processing or decoupled integration.",
+    "expected_skills": [
+      "design-event-driven-flow"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-governance",
+    "prompt": "A new AI, Microsoft or digital capability needs proportionate governance, ownership and minimum policy controls.",
+    "expected_skills": [
+      "design-governance"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-learning-sprint",
+    "prompt": "A technical topic should be learned quickly through hands-on work with clear proof of competence.",
+    "expected_skills": [
+      "design-learning-sprint"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-m365-solution",
+    "prompt": "A business process or productivity problem should be translated into a practical Microsoft 365, Power Platform or Copilot solution architecture.",
+    "expected_skills": [
+      "design-m365-solution"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-mcp-capabilities",
+    "prompt": "An API or backend should be translated into a clean MCP capability model.",
+    "expected_skills": [
+      "design-mcp-capabilities"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-mvp",
+    "prompt": "A user wants to turn an idea into the smallest practical MVP that can validate value, feasibility and demand.",
+    "expected_skills": [
+      "design-mvp"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-offering",
+    "prompt": "A consulting, training or AI capability needs to become a sellable package, workshop, service or subscription.",
+    "expected_skills": [
+      "design-offering"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-pilot",
+    "prompt": "A product, AI capability, automation or enterprise change should be validated through a small controlled pilot before scale-up.",
+    "expected_skills": [
+      "design-pilot"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-power-platform-solution",
+    "prompt": "A Power Apps, Power Automate or Dataverse solution needs architecture, environment, governance and ALM decisions.",
+    "expected_skills": [
+      "design-power-platform-solution"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-quarter-focus",
+    "prompt": "Many goals should be reduced to a focused quarterly direction with a small set of compounding initiatives.",
+    "expected_skills": [
+      "design-quarter-focus"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-design-trainer-demo",
+    "prompt": "A technical concept needs a reliable instructor demo with clear talking points, expected observations and fallback behavior.",
+    "expected_skills": [
+      "design-trainer-demo"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-diagnose-technical-issue",
+    "prompt": "A technical problem, error or unreliable behavior must be narrowed to the most likely cause and next diagnostic step.",
+    "expected_skills": [
+      "diagnose-technical-issue"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-extract-reusable-ip",
+    "prompt": "Completed project, training, consulting or development work should be mined for reusable assets, templates, Skills, labs or products.",
+    "expected_skills": [
+      "extract-reusable-ip"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-generate-test-strategy",
+    "prompt": "A user wants a practical test strategy derived from requirements, risks, changes or acceptance criteria.",
+    "expected_skills": [
+      "generate-test-strategy"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-grow-client-account",
+    "prompt": "Existing client work should be reviewed for follow-on opportunities, relationship actions and reusable value.",
+    "expected_skills": [
+      "grow-client-account"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-identify-training-expansion",
+    "prompt": "Completed training may lead to additional modules, workshops or implementation support.",
+    "expected_skills": [
+      "identify-training-expansion"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-improve-observability",
+    "prompt": "Debugging or operations are hindered by missing logs, metrics, traces or correlation data.",
+    "expected_skills": [
+      "improve-observability"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-manage-commercial-pipeline",
+    "prompt": "Multiple leads and opportunities should be prioritized into a focused commercial pipeline.",
+    "expected_skills": [
+      "manage-commercial-pipeline"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-manage-consulting-scope",
+    "prompt": "A consulting engagement needs clear scope control, assumptions and risk tracking.",
+    "expected_skills": [
+      "manage-consulting-scope"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-optimize-agent-economics",
+    "prompt": "An agent's latency, token/tool cost or operational overhead should be balanced against task value.",
+    "expected_skills": [
+      "optimize-agent-economics"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-optimize-agentkit-context",
+    "prompt": "AgentKit token/context cost should be reduced without losing capability quality.",
+    "expected_skills": [
+      "optimize-agentkit-context"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-plan-change",
+    "prompt": "A user wants to implement a technical or process change safely, including impact, dependencies, verification and rollback.",
+    "expected_skills": [
+      "plan-change"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-plan-content-campaign",
+    "prompt": "One core topic should be turned into a small coherent set of content assets tied to a business goal.",
+    "expected_skills": [
+      "plan-content-campaign"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-plan-content-reuse",
+    "prompt": "A source artifact such as training, research, code, notes or a client solution should be repurposed into multiple useful outputs.",
+    "expected_skills": [
+      "plan-content-reuse"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-plan-training-day",
+    "prompt": "Learning objectives and modules should be turned into a realistic instructor-led day plan with enough practice and contingency.",
+    "expected_skills": [
+      "plan-training-day"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-position-workshop",
+    "prompt": "A workshop or training product needs a clear promise, audience, business value and realistic outcome.",
+    "expected_skills": [
+      "position-workshop"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-change-communication",
+    "prompt": "A release, rollout or process change should be communicated clearly to users and stakeholders.",
+    "expected_skills": [
+      "prepare-change-communication"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-client-handoff",
+    "prompt": "A consulting solution should be handed over with ownership, documentation and capability transfer.",
+    "expected_skills": [
+      "prepare-client-handoff"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-client-status",
+    "prompt": "Project information should be turned into a concise stakeholder status update.",
+    "expected_skills": [
+      "prepare-client-status"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-continuation",
+    "prompt": "Work must be paused or transferred and the user wants a clean continuation checkpoint for a future session or another AI.",
+    "expected_skills": [
+      "prepare-continuation"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-executive-brief",
+    "prompt": "Complex technical or project information should be converted into a concise management decision brief.",
+    "expected_skills": [
+      "prepare-executive-brief"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-handoff",
+    "prompt": "A user wants to transfer project, task or conversation context to another person or AI so work can continue without rereading the full history.",
+    "expected_skills": [
+      "prepare-handoff"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-person-followup",
+    "prompt": "The user wants context and the next useful follow-up before contacting someone.",
+    "expected_skills": [
+      "prepare-person-followup"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-power-platform-release",
+    "prompt": "A Power Platform solution must be promoted safely across environments.",
+    "expected_skills": [
+      "prepare-power-platform-release"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-proposal-strategy",
+    "prompt": "An active opportunity needs a proposal strategy before writing the actual proposal.",
+    "expected_skills": [
+      "prepare-proposal-strategy"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-security-approval",
+    "prompt": "A technical change needs a concise security approval package rather than an open-ended review.",
+    "expected_skills": [
+      "prepare-security-approval"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prepare-training-delivery",
+    "prompt": "An upcoming client training needs a complete operational readiness check.",
+    "expected_skills": [
+      "prepare-training-delivery"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prioritize-agent-roadmap",
+    "prompt": "An AI agent roadmap should be phased from prototype through pilot to production based on value and evidence.",
+    "expected_skills": [
+      "prioritize-agent-roadmap"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prioritize-learning-radar",
+    "prompt": "Technology updates, courses or topics should be filtered into a focused learning radar based on real work relevance.",
+    "expected_skills": [
+      "prioritize-learning-radar"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-prioritize-work",
+    "prompt": "A user wants to turn a set of tasks, ideas, issues or opportunities into a practical Now / Next / Later execution order.",
+    "expected_skills": [
+      "prioritize-work"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-process-meeting-outcomes",
+    "prompt": "Meeting notes or a conversation must be converted into decisions, concrete actions, owners, blockers and waiting-for items.",
+    "expected_skills": [
+      "process-meeting-outcomes"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-qualify-opportunity",
+    "prompt": "A lead or client request should be assessed for fit, value, commercial risk and the next concrete sales action.",
+    "expected_skills": [
+      "qualify-opportunity"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-qualify-training-request",
+    "prompt": "A new training request should be assessed for scope, fit, prerequisites, commercial viability and preparation effort.",
+    "expected_skills": [
+      "qualify-training-request"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-rebalance-personal-load",
+    "prompt": "Work and life commitments feel overloaded and the user wants a practical rebalance rather than a generic wellbeing answer.",
+    "expected_skills": [
+      "rebalance-personal-load"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-record-architecture-decision",
+    "prompt": "A technical decision should be captured as a concise architecture decision with alternatives and consequences.",
+    "expected_skills": [
+      "record-architecture-decision"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-agent-design",
+    "prompt": "An AI agent or agent workflow should be reviewed for responsibility boundaries, tool selection, side effects and human approval points.",
+    "expected_skills": [
+      "review-agent-design"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-agentkit-capabilities",
+    "prompt": "AgentKit's micro-tools and Skills should be reviewed for overlap, quality, routing and missing capability gaps.",
+    "expected_skills": [
+      "review-agentkit-capabilities"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-analytics-access",
+    "prompt": "BI/data access needs review for permissions, ownership and operational reliability.",
+    "expected_skills": [
+      "review-analytics-access"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-api-architecture",
+    "prompt": "An existing API or integration architecture should be reviewed for boundaries, contracts, dependencies and operational risk.",
+    "expected_skills": [
+      "review-api-architecture"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-aspnet-endpoints",
+    "prompt": "ASP.NET Core endpoint behavior, validation, error responses and API contracts need review.",
+    "expected_skills": [
+      "review-aspnet-endpoints"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-automation-reliability",
+    "prompt": "An automation should be reviewed for trigger quality, retries, idempotency, exception handling and fallback.",
+    "expected_skills": [
+      "review-automation-reliability"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-dashboard-value",
+    "prompt": "A dashboard/report should be reviewed for decision usefulness rather than visual polish alone.",
+    "expected_skills": [
+      "review-dashboard-value"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-data-quality",
+    "prompt": "A dataset or reporting pipeline should be reviewed for quality, lineage and freshness risks.",
+    "expected_skills": [
+      "review-data-quality"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-decision-quality",
+    "prompt": "A past strategic or project decision should be reviewed for assumptions, evidence, trade-offs and reusable lessons.",
+    "expected_skills": [
+      "review-decision-quality"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-dotnet-implementation",
+    "prompt": "A .NET implementation needs a focused engineering review beyond generic code style.",
+    "expected_skills": [
+      "review-dotnet-implementation"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-ef-data-access",
+    "prompt": "EF Core data access should be reviewed for query behavior, lifetime, concurrency and performance.",
+    "expected_skills": [
+      "review-ef-data-access"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-fix-plan",
+    "prompt": "A proposed technical fix should be assessed for regression risk, blast radius, rollback and verification before implementation.",
+    "expected_skills": [
+      "review-fix-plan"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-initiative-portfolio",
+    "prompt": "Multiple projects, product ideas and client initiatives should be reviewed as a portfolio rather than individually.",
+    "expected_skills": [
+      "review-initiative-portfolio"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-mcp-contracts",
+    "prompt": "MCP tool/resource contracts need review for schema, errors, auth and agent usability.",
+    "expected_skills": [
+      "review-mcp-contracts"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-power-app",
+    "prompt": "A Power App needs review for UX, delegation, data model and supportability.",
+    "expected_skills": [
+      "review-power-app"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-power-automate-flow",
+    "prompt": "A Power Automate flow should be reviewed for reliability, maintainability and production readiness.",
+    "expected_skills": [
+      "review-power-automate-flow"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-power-platform-solution",
+    "prompt": "An existing Power Platform solution needs architecture, ALM, ownership and resilience review.",
+    "expected_skills": [
+      "review-power-platform-solution"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-privacy-impact",
+    "prompt": "An AI, automation or data workflow should be reviewed for personal-data, retention and privacy implications.",
+    "expected_skills": [
+      "review-privacy-impact"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-security-posture",
+    "prompt": "A solution or workflow needs a focused security review across identity, secrets, data, tenancy and auditability.",
+    "expected_skills": [
+      "review-security-posture"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-training-content",
+    "prompt": "Slides, exercises or a training module should be reviewed for clarity, teaching purpose, realistic practice and timing.",
+    "expected_skills": [
+      "review-training-content"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-review-training-delivery",
+    "prompt": "Use after delivery to capture lessons, environment issues and content improvements.",
+    "expected_skills": [
+      "review-training-delivery"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-run-strategic-review",
+    "prompt": "The user wants to review recent work and decide what to continue, stop, systematize or invest in strategically.",
+    "expected_skills": [
+      "run-strategic-review"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-run-weekly-review",
+    "prompt": "A user wants to review active work, commitments and unfinished items and choose a focused Now / Next / Later plan.",
+    "expected_skills": [
+      "run-weekly-review"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-secure-agent-workflow",
+    "prompt": "An AI agent workflow needs a security review focused on untrusted content, memory, tool side effects and permission boundaries.",
+    "expected_skills": [
+      "secure-agent-workflow"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-shape-client-proposal",
+    "prompt": "A client request must be translated into a clear scope, deliverables, value proposition and proof of success before proposal writing.",
+    "expected_skills": [
+      "shape-client-proposal"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-shape-linkedin-post",
+    "prompt": "A professional LinkedIn idea should be structured around a relevant hook, concrete value, evidence and a natural CTA.",
+    "expected_skills": [
+      "shape-linkedin-post"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-summarize-relationship-context",
+    "prompt": "A concise relationship summary is needed from a larger set of provided conversations or notes.",
+    "expected_skills": [
+      "summarize-relationship-context"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-systemize-personal-routine",
+    "prompt": "Repeated personal or administrative work should be simplified, automated or turned into a lightweight routine.",
+    "expected_skills": [
+      "systemize-personal-routine"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-triage-personal-inbox",
+    "prompt": "A mixed inbox of ideas, tasks, notes and commitments should be routed into a clean personal operating system.",
+    "expected_skills": [
+      "triage-personal-inbox"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-update-training-from-radar",
+    "prompt": "New Microsoft/AI developments should be translated into concrete changes to existing training materials and labs.",
+    "expected_skills": [
+      "update-training-from-radar"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-validate-claims",
+    "prompt": "A user wants to check whether statements in a document, proposal, report, message or deliverable are actually supported by evidence.",
+    "expected_skills": [
+      "validate-claims"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-verify-security-controls",
+    "prompt": "Implemented security controls need an evidence-based verification plan.",
+    "expected_skills": [
+      "verify-security-controls"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  },
+  {
+    "id": "baseline-write-technical-guidance",
+    "prompt": "Technical knowledge should become clear, audience-appropriate documentation or instructions.",
+    "expected_skills": [
+      "write-technical-guidance"
+    ],
+    "note": "auto-generated baseline from the skill's own SKILL.md description; refine with a hand-written scenario when this skill gets real usage feedback"
+  }
+]

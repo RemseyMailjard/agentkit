@@ -5,4 +5,4 @@ description: >
 ---
 # Review Data Quality
 Compose:
-data-quality-risk-finder → data-lineage-question-builder → data-refresh-risk-checker → data-test-generator.
+data-quality-risk-finder → data-lineage-question-builder → data-refresh-risk-checker → semantic-model-boundary-checker → data-test-generator.

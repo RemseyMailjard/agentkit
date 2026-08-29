@@ -14,5 +14,8 @@ Find realistic edge conditions likely to break a requirement or implementation.
 - partial state;
 - malformed external data.
 
+## Output
+edge case; trigger condition; likely failure; suggested test or guard.
+
 ## Boundary
 Prioritize plausible business/system edges over exotic theoretical cases.

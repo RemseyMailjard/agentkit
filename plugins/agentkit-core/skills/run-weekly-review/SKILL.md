@@ -5,6 +5,6 @@ description: >
 ---
 # Run Weekly Review
 Compose:
-weekly-review-synthesizer → unfinished-work-detector → workload-risk-detector → focus-selector → priority-scorer → follow-up-detector.
+weekly-review-synthesizer → unfinished-work-detector → workload-risk-detector → focus-selector → priority-scorer → follow-up-detector → personal-review-question-builder.
 
 Return wins, unfinished work, waiting-for, overload risks, NOW, NEXT, LATER and one finish-first focus.

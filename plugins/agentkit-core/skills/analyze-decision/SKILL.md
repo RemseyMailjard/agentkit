@@ -12,6 +12,7 @@ Compose:
 2. assumption-detector
 3. contradiction-detector
 4. evidence-checker
+5. decision-summary-builder
 
 ## Output
 Return:

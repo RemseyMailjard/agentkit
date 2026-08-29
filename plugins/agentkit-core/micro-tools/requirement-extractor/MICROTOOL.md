@@ -18,5 +18,8 @@ Use engineering and consultancy principles.
 - testability;
 - unknowns.
 
+## Output
+extracted requirement, grouped by category above; flagged unknowns.
+
 ## Boundary
 Do not invent requirements merely because they are common.

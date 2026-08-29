@@ -5,6 +5,6 @@ description: >
 ---
 # Plan Content Reuse
 Compose:
-content-repurpose-mapper → audience-gap-detector → business-value-translator → priority-scorer → knowledge-capture-planner.
+content-repurpose-mapper → audience-gap-detector → training-reuse-scorer → business-value-translator → priority-scorer → knowledge-capture-planner.
 
 Return prioritized derivative assets, target audiences, purpose, effort and next creation action.

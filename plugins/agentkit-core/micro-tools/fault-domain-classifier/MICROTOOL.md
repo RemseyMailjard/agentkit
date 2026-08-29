@@ -5,3 +5,5 @@ Classify the likely fault domain before deep debugging.
 application, data, identity, network, policy, dependency, environment, deployment, configuration, user/process.
 ## Output
 ranked domains; evidence; next discriminating check.
+## Boundary
+Do not perform broader analysis, rewriting, or decisions outside this responsibility; return findings for the parent Skill to act on.
