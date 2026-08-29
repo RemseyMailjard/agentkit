@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate marketplace and plugins
+    name: AgentKit quality gate
     runs-on: ubuntu-latest
 
     steps:
@@ -25,4 +25,15 @@ jobs:
           python-version: "3.12"
 
       - name: Run AgentKit validator
-        run: python scripts/validate_agentkit.py
+        id: validate
+        run: |
+          python scripts/validate_agentkit.py | tee agentkit-validation.txt
+
+      - name: Add validation summary
+        if: always()
+        run: |
+          echo "## AgentKit Validation" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```text' >> "$GITHUB_STEP_SUMMARY"
+          cat agentkit-validation.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
