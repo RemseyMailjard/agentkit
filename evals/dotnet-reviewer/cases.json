@@ -1,0 +1,161 @@
+[
+  {
+    "id": "general-dotnet-review",
+    "prompt": "Review this .NET repository for correctness, maintainability and testability. Do not change anything yet.",
+    "expected_skill": "review-dotnet",
+    "quality_checks": [
+      "no edits first",
+      "severity classification",
+      "evidence-based findings",
+      "testing gaps"
+    ]
+  },
+  {
+    "id": "aspnet-api-review",
+    "prompt": "Review this ASP.NET Core API. Focus on HTTP contracts, middleware, validation and DI lifetimes.",
+    "expected_skill": "review-aspnet-api",
+    "quality_checks": [
+      "api-specific routing",
+      "status code review",
+      "middleware ordering",
+      "DI lifetime checks"
+    ]
+  },
+  {
+    "id": "ef-core-review",
+    "prompt": "Review the Entity Framework Core usage in this repository for query efficiency, DbContext lifetime and migrations.",
+    "expected_skill": "review-ef-core",
+    "quality_checks": [
+      "DbContext lifetime",
+      "N+1 risk",
+      "tracking/projection",
+      "migration safety"
+    ]
+  },
+  {
+    "id": "dotnet-security-review",
+    "prompt": "Security review this .NET application. Focus on authorization, tenant isolation, secrets and unsafe input.",
+    "expected_skill": "review-security",
+    "quality_checks": [
+      "trust boundaries",
+      "authn vs authz",
+      "tenant isolation",
+      "input risks"
+    ]
+  },
+  {
+    "id": "fix-high-findings",
+    "prompt": "Fix only the Critical and High findings from the existing .NET review.",
+    "expected_skill": "fix-findings",
+    "quality_checks": [
+      "scope respected",
+      "smallest safe fixes",
+      "regression tests",
+      "no unsupported success claims"
+    ]
+  },
+  {
+    "id": "result-blocking-async",
+    "prompt": "Review this C# service. I suspect .Result and .Wait() are causing reliability problems.",
+    "expected_skill": "review-dotnet",
+    "quality_checks": [
+      "async blocking detected",
+      "deadlock/thread starvation discussed",
+      "targeted remediation"
+    ]
+  },
+  {
+    "id": "di-lifetime-api",
+    "prompt": "Check this ASP.NET Core API for dependency injection lifetime problems.",
+    "expected_skill": "review-aspnet-api",
+    "quality_checks": [
+      "scoped/singleton mismatch",
+      "captured dependencies",
+      "framework-specific reasoning"
+    ]
+  },
+  {
+    "id": "ef-n-plus-one",
+    "prompt": "Our EF Core endpoint is slow and seems to execute many queries per request. Review the data access.",
+    "expected_skill": "review-ef-core",
+    "quality_checks": [
+      "N+1 analysis",
+      "query evidence",
+      "projection/include tradeoff",
+      "measurement suggested"
+    ]
+  },
+  {
+    "id": "authorization-missing-endpoint",
+    "prompt": "Check whether sensitive ASP.NET Core endpoints can be reached without the required authorization.",
+    "expected_skill": "review-security",
+    "quality_checks": [
+      "endpoint authorization",
+      "resource-level checks",
+      "severity based on impact"
+    ]
+  },
+  {
+    "id": "review-vs-fix-boundary",
+    "prompt": "Review the repository and tell me what is wrong. Do not fix anything.",
+    "expected_skill": "review-dotnet",
+    "quality_checks": [
+      "no remediation",
+      "findings only",
+      "clear next steps"
+    ]
+  },
+  {
+    "id": "specific-fix-without-rereview",
+    "prompt": "Finding H-03 says DbContext is captured by a singleton. Fix H-03 and add a regression test.",
+    "expected_skill": "fix-findings",
+    "quality_checks": [
+      "does not restart full review",
+      "fixes named finding",
+      "regression test"
+    ]
+  },
+  {
+    "id": "mcp-dotnet-security-overlap",
+    "prompt": "This repository is a .NET MCP server. Review the .NET authentication and tenant isolation, but also flag any MCP-specific security concerns separately.",
+    "expected_skills": [
+      "review-security",
+      "secure-mcp-server"
+    ],
+    "quality_checks": [
+      "layer separation",
+      "no duplicate findings",
+      ".NET security plus MCP-specific concerns"
+    ]
+  },
+  {
+    "id": "aspnet-vs-general",
+    "prompt": "I only care about the HTTP/API behavior of this ASP.NET Core project, not the rest of the repository.",
+    "expected_skill": "review-aspnet-api",
+    "quality_checks": [
+      "scope respected",
+      "no broad unrelated review",
+      "API contracts prioritized"
+    ]
+  },
+  {
+    "id": "ef-vs-performance-general",
+    "prompt": "The slowdown is in EF Core query generation and tracking. Review only that data-access layer.",
+    "expected_skill": "review-ef-core",
+    "quality_checks": [
+      "scope respected",
+      "EF-specific reasoning",
+      "tracking/query analysis"
+    ]
+  },
+  {
+    "id": "security-vs-general",
+    "prompt": "Do not do a general code-quality review. I only want security findings for this .NET app.",
+    "expected_skill": "review-security",
+    "quality_checks": [
+      "security-only scope",
+      "no style noise",
+      "prioritized exploit-focused findings"
+    ]
+  }
+]
