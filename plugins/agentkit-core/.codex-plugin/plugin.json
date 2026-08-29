@@ -1,0 +1,41 @@
+{
+  "name": "agentkit-core",
+  "version": "0.1.0",
+  "description": "Reusable AgentKit core workflows built from small composable micro-capabilities for quality, action extraction and completion checks.",
+  "author": {
+    "name": "Skills4-IT"
+  },
+  "homepage": "https://github.com/RemseyMailjard/agentkit",
+  "repository": "https://github.com/RemseyMailjard/agentkit",
+  "license": "MIT",
+  "keywords": [
+    "agentkit",
+    "quality",
+    "productivity",
+    "workflow",
+    "micro-tools",
+    "review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AgentKit Core",
+    "shortDescription": "Reusable quality and productivity workflows",
+    "longDescription": "Compact AgentKit workflows composed from reusable micro-capabilities for final checks, next actions and definition-of-done validation.",
+    "developerName": "Skills4-IT",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://skills4-it.nl/",
+    "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Run a final quality check on this message before I send it.",
+      "Find the next concrete action in this information.",
+      "Check whether this work actually meets its definition of done."
+    ],
+    "brandColor": "#512BD4",
+    "screenshots": []
+  }
+}

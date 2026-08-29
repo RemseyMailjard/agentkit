@@ -1,0 +1,89 @@
+{
+  "plugin": "agentkit-core",
+  "version": 1,
+  "cases": [
+    {
+      "id": "pre-send-risk",
+      "input": "Check this email before I send it. Only flag important risks.",
+      "expected_skills": [
+        "final-message-check"
+      ]
+    },
+    {
+      "id": "commitment-mail",
+      "input": "Do a final mail check and tell me if I accidentally promise anything.",
+      "expected_skills": [
+        "final-message-check"
+      ]
+    },
+    {
+      "id": "next-action",
+      "input": "From these meeting notes, tell me the next concrete thing I should do.",
+      "expected_skills": [
+        "find-next-action"
+      ]
+    },
+    {
+      "id": "waiting",
+      "input": "I sent the proposal; now the customer must approve it. What next?",
+      "expected_skills": [
+        "find-next-action"
+      ]
+    },
+    {
+      "id": "dod-code",
+      "input": "The feature is implemented but tests were not run. Is this done?",
+      "expected_skills": [
+        "check-definition-of-done"
+      ]
+    },
+    {
+      "id": "dod-criteria",
+      "input": "Check this deliverable against the acceptance criteria and identify what is unverified.",
+      "expected_skills": [
+        "check-definition-of-done"
+      ]
+    },
+    {
+      "id": "boundary-dotnet",
+      "input": "Review this ASP.NET Core repository for security vulnerabilities.",
+      "expected_plugins": [
+        "dotnet-reviewer"
+      ],
+      "excluded_skills": [
+        "final-message-check",
+        "find-next-action",
+        "check-definition-of-done"
+      ]
+    },
+    {
+      "id": "boundary-training",
+      "input": "Design a one-day Power Platform training.",
+      "expected_plugins": [
+        "training-creator"
+      ],
+      "excluded_skills": [
+        "final-message-check",
+        "find-next-action",
+        "check-definition-of-done"
+      ]
+    },
+    {
+      "id": "message-action-not-review",
+      "input": "Tell me what action this email requires. Do not review the writing.",
+      "expected_skills": [
+        "find-next-action"
+      ],
+      "excluded_skills": [
+        "final-message-check"
+      ]
+    },
+    {
+      "id": "review-dod-no-fix",
+      "input": "Check whether this finished deliverable meets all stated criteria. Do not fix it.",
+      "expected_skills": [
+        "check-definition-of-done"
+      ]
+    }
+  ]
+}
