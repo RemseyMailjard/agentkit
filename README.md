@@ -7,6 +7,9 @@ Build · Review · Integrate · Learn · Remember
 AgentKit is a modular Codex plugin marketplace for engineering, quality, training,
 knowledge and agent workflows.
 
+See the [documentation index](docs/README.md) for architecture, plugin, evaluation,
+validation, and reference documentation.
+
 ## Current platform
 
 ```text
@@ -138,10 +141,16 @@ Training Creator
 ├── AGENTS.md
 ├── CHANGELOG.md
 ├── docs/
+│   ├── README.md
 │   ├── architecture.md
 │   ├── codex-installation.md
+│   ├── plugin-contract.md
 │   ├── routing-matrix.md
-│   └── plugin-contract.md
+│   ├── evals/
+│   ├── plans/
+│   ├── plugins/
+│   ├── reference/
+│   └── validation/
 ├── evals/
 │   ├── mcp-builder/
 │   ├── dotnet-reviewer/

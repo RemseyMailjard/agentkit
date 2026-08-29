@@ -87,8 +87,9 @@ If `python` is not on `PATH` in Codex Desktop, use the bundled Python executable
 reported by the workspace dependency lookup instead of installing another runtime.
 
 When routing or runtime-eval behavior changes, also run the relevant eval suite. The
-fixture-backed smoke command is documented in `docs-runtime-evals.md`; live Codex runs
-are documented in `docs-codex-runtime-adapter.md` and require an available Codex CLI.
+fixture-backed smoke command is documented in `docs/evals/runtime-evals.md`; live
+Codex runs are documented in `docs/evals/codex-runtime-adapter.md` and require an
+available Codex CLI.
 
 Before reporting completion, inspect `git diff --check` and `git diff`. Report exactly
 which checks were run and whether they passed; never translate static inspection into
