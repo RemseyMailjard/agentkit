@@ -11,9 +11,9 @@ permissions:
 
 jobs:
   quality-gate:
-    name: AgentKit deterministic quality gate
+    name: AgentKit platform quality gate
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout AgentKit
@@ -36,8 +36,7 @@ jobs:
           path: .external/openai-plugins
 
       - name: 1. Structural validation
-        run: |
-          python scripts/validate_agentkit.py
+        run: python scripts/validate_agentkit.py
 
       - name: 2. Runtime routing smoke tests
         run: |
@@ -48,21 +47,32 @@ jobs:
             --json-out "evals/runtime/quality-gate-results.json" \
             --markdown-out "evals/runtime/quality-gate-results.md"
 
-      - name: 3. Official MCP Builder Plugin Eval
+      - name: 3. Official Plugin Eval — all plugins
         env:
           OPENAI_PLUGINS_DIR: ${{ github.workspace }}/.external/openai-plugins
         run: |
-          python scripts/run_plugin_eval_mcp_builder.py analyze --format markdown \
-            | tee mcp-builder-plugin-eval.md
+          mkdir -p evals/plugin-eval/reports
+          for plugin in mcp-builder dotnet-reviewer lab-generator training-creator onenote; do
+            echo "=== $plugin ==="
+            python scripts/run_plugin_eval.py "$plugin" --format markdown \
+              | tee "evals/plugin-eval/reports/${plugin}.md"
+          done
 
-      - name: 4. Enforce MCP Builder Plugin Eval threshold
+      - name: 4. Enforce production plugin thresholds
         run: |
-          python scripts/check_plugin_eval_report.py \
-            mcp-builder-plugin-eval.md \
-            --minimum-score 80 \
-            --require-zero-fails
+          for plugin in mcp-builder dotnet-reviewer lab-generator training-creator; do
+            python scripts/check_plugin_eval_report.py \
+              "evals/plugin-eval/reports/${plugin}.md" \
+              --minimum-score 80 \
+              --require-zero-fails
+          done
 
-      - name: 5. Benchmark asset validation
+      - name: 5. OneNote scaffold report policy
+        run: |
+          test -s evals/plugin-eval/reports/onenote.md
+          echo "OneNote is evaluated but remains non-blocking while its manifest describes it as a scaffold."
+
+      - name: 6. MCP Builder benchmark asset validation
         run: |
           test -f plugins/mcp-builder/.plugin-eval/benchmark.template.json
           test -f benchmarks/workspaces/mcp-builder-customer-support/openapi.yaml
@@ -74,20 +84,23 @@ jobs:
         if: always()
         run: |
           {
-            echo "## AgentKit Quality Gate"
+            echo "## AgentKit Platform Quality Gate"
             echo
-            echo "- Structural validator: executed"
-            echo "- Runtime fixture routing smoke: executed"
-            echo "- Official OpenAI Plugin Eval: executed"
-            echo "- MCP Builder minimum score: 80/100"
-            echo "- MCP Builder hard failures allowed: 0"
-            echo "- Benchmark assets: validated"
-            echo "- Live Codex benchmark: optional; not part of this gate"
+            echo "| Plugin | Policy |"
+            echo "|---|---|"
+            echo "| MCP Builder | >= 80, 0 hard fails |"
+            echo "| .NET Reviewer | >= 80, 0 hard fails |"
+            echo "| Lab Generator | >= 80, 0 hard fails |"
+            echo "| Training Creator | >= 80, 0 hard fails |"
+            echo "| OneNote | measured, scaffold/non-blocking |"
             echo
-            if [ -f mcp-builder-plugin-eval.md ]; then
-              echo "### MCP Builder Plugin Eval"
-              sed -n '/## At a Glance/,/## Why It Matters/p' mcp-builder-plugin-eval.md
-            fi
+            for report in evals/plugin-eval/reports/*.md; do
+              [ -f "$report" ] || continue
+              plugin=$(basename "$report" .md)
+              echo "### $plugin"
+              sed -n '/## At a Glance/,/## Why It Matters/p' "$report"
+              echo
+            done
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload quality reports
@@ -96,7 +109,7 @@ jobs:
         with:
           name: agentkit-quality-gate
           path: |
-            mcp-builder-plugin-eval.md
+            evals/plugin-eval/reports/
             evals/runtime/quality-gate-results.json
             evals/runtime/quality-gate-results.md
           if-no-files-found: warn

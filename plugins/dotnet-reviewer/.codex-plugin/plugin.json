@@ -1,6 +1,6 @@
 {
   "name": "dotnet-reviewer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Review and improve .NET repositories using repeatable Skills4-IT quality workflows for correctness, architecture, ASP.NET Core, EF Core, security and remediation.",
   "author": {
     "name": "Skills4-IT"
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": ".NET Reviewer",
     "shortDescription": "Review and improve .NET repositories",
-    "longDescription": "Skills4-IT review workflows for .NET code quality, ASP.NET Core APIs, Entity Framework Core, security findings and focused remediation.",
+    "longDescription": "Focused Skills4-IT review workflows for .NET quality, ASP.NET Core, EF Core, security and explicit remediation.",
     "developerName": "Skills4-IT",
     "category": "Developer Tools",
     "capabilities": [
@@ -30,12 +30,12 @@
       "Write"
     ],
     "websiteURL": "https://skills4-it.nl/",
+    "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
       "Review this .NET repository before changing anything.",
-      "Review this ASP.NET Core API.",
-      "Review the Entity Framework Core usage in this repository.",
-      "Security review this .NET application.",
-      "Fix only the Critical and High findings from the review."
+      "Review this ASP.NET Core or EF Core implementation.",
+      "Fix only the confirmed findings I select from the review."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

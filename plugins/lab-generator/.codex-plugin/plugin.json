@@ -1,6 +1,6 @@
 {
   "name": "lab-generator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create, review, test and adapt practical hands-on IT labs using repeatable Skills4-IT instructional design workflows.",
   "author": {
     "name": "Skills4-IT"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Lab Generator",
     "shortDescription": "Create and improve hands-on IT labs",
-    "longDescription": "Skills4-IT workflows for creating realistic technical labs, challenges, lab reviews, lab validation and audience adaptation.",
+    "longDescription": "Focused Skills4-IT workflows for practical labs, challenges, validation, review and audience adaptation.",
     "developerName": "Skills4-IT",
     "category": "Education",
     "capabilities": [
@@ -29,12 +29,12 @@
       "Write"
     ],
     "websiteURL": "https://skills4-it.nl/",
+    "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
-      "Create a 45-minute hands-on lab for this topic.",
-      "Create a challenge exercise based on this lab.",
-      "Review this technical lab before delivery.",
-      "Test whether this lab is executable and complete.",
-      "Adapt this lab for a less experienced audience."
+      "Create a practical hands-on lab for this topic and audience.",
+      "Review and test this lab for delivery readiness.",
+      "Adapt this lab or create a challenge from it."
     ],
     "brandColor": "#512BD4",
     "screenshots": []

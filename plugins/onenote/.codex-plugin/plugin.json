@@ -1,6 +1,6 @@
 {
   "name": "onenote",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scaffolded OneNote knowledge and memory plugin for AgentKit. Defines context-retrieval and knowledge-capture skill boundaries ahead of a future MCP-backed implementation.",
   "author": {
     "name": "Skills4-IT"
@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "OneNote",
     "shortDescription": "Scaffolded knowledge and memory layer",
-    "longDescription": "Initial AgentKit scaffold for OneNote-backed knowledge retrieval, context recall and knowledge capture. MCP connectivity is intentionally not implemented yet.",
+    "longDescription": "AgentKit scaffold for OneNote knowledge retrieval, memory and capture. MCP connectivity is intentionally not implemented yet.",
     "developerName": "Skills4-IT",
     "category": "Productivity",
     "capabilities": [
@@ -30,11 +30,12 @@
       "Write"
     ],
     "websiteURL": "https://skills4-it.nl/",
+    "privacyPolicyURL": "https://github.com/RemseyMailjard/agentkit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/RemseyMailjard/agentkit/blob/main/TERMS.md",
     "defaultPrompt": [
       "Recall relevant context from OneNote.",
       "Capture this knowledge in OneNote.",
-      "Research my existing OneNote memory.",
-      "Build project context from OneNote."
+      "Build project context from existing OneNote knowledge."
     ],
     "brandColor": "#7719AA",
     "screenshots": []
